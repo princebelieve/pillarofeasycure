@@ -74,7 +74,7 @@ export default function ProductCard({ product }) {
 
         <div className="card-actions">
           <button type="button" className="breathing-button" onClick={() => navigate(`/product/${product._id}`)}>View Product</button>
-          <button className="wa breathing-button" onClick={() => window.open(`https://wa.me/2348089938820?text=Hello, I want to order ${product.name}`, "_blank")}>WhatsApp</button>
+          <button className="wa breathing-button" onClick={() => window.open(`https://wa.me/2348029778813?text=Hello, I want to order ${product.name}`, "_blank")}>WhatsApp</button>
         </div>
       </div>
     </div>

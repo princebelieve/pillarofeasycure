@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const response = await fetch(apiUrl);
     if (response.ok) products = await response.json();
 
-    const baseUrl = "https://easylifewellnesshub.com";
+    const baseUrl = "https://pillarofeasycure.com";
     const staticPages = [
       { loc: baseUrl, priority: "1.00" },
       { loc: `${baseUrl}/collection`, priority: "0.95" },

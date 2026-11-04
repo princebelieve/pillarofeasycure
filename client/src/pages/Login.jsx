@@ -112,7 +112,7 @@ export default function Login() {
       <div className="form auth-form login-auth-form" style={{ marginTop: 50 }}>
         <h1>Login</h1>
         <p className="muted" style={{ marginBottom: 20 }}>
-          Welcome back. Continue your EASYLIFE wellness journey.
+          Welcome back. Continue your EASYCURE wellness journey.
         </p>
 
         <form onSubmit={handleSubmit}>

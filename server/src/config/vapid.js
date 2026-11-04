@@ -7,7 +7,7 @@
 const vapid = {
   publicKey: process.env.VAPID_PUBLIC_KEY,
   privateKey: process.env.VAPID_PRIVATE_KEY,
-  subject: process.env.VAPID_SUBJECT || "mailto:support@easylifewellnesshub.com",
+  subject: process.env.VAPID_SUBJECT || "mailto:pillarofeasycure@gmail.com",
 };
 
 /**

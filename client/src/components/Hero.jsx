@@ -69,12 +69,12 @@ export default function Hero() {
 
         <div>
           <button className="primary" onClick={() => navigate("/collection")}>
-            Explore EASYLIFE
+            Explore EASYCURE
           </button>
 
           <button
             className="secondary"
-            onClick={() => window.open("https://wa.me/2348089938820", "_blank")}
+            onClick={() => window.open("https://wa.me/2348029778813", "_blank")}
           >
             WhatsApp
           </button>

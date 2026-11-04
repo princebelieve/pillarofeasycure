@@ -59,6 +59,7 @@ export default function AdminLayout({ children }) {
   }
 
   const allLinks = [
+    { to: "/admin/data", label: "Import & Export", icon: <Package size={18} /> },
     {
       to: "/admin",
       label: "Dashboard",
@@ -173,6 +174,7 @@ export default function AdminLayout({ children }) {
   ];
 
   const adminOnlyLinks = new Set([
+    "/admin/data",
     "/admin",
     "/admin/orders",
     "/admin/distributors",
@@ -206,7 +208,7 @@ export default function AdminLayout({ children }) {
             <img src="/logo.png" alt="logo" className="admin-logo" />
 
             <div>
-              <strong>EASYLIFE</strong>
+              <strong>EASYCURE</strong>
 
               <span>Admin Panel</span>
             </div>

@@ -10,7 +10,7 @@ import {
 } from "../services/api";
 
 const CartContext = createContext();
-const GUEST_CART_KEY = "easyLifeGuestCart";
+const GUEST_CART_KEY = "easyCureGuestCart";
 
 function getDisplayPrice(product = {}) {
   const regularPrice = Number(product.price || 0);

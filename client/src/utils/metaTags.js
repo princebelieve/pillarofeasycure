@@ -4,8 +4,8 @@
 
 export function setMetaTags(config) {
   const {
-    title = "EASYLIFE WELLNESS HUB",
-    description = "EASYLIFE WELLNESS HUB offers wellness products, free practical education, and community support for healthier everyday living.",
+    title = "PILLAR OF EASYCURE AND WELLNESS HAVEN",
+    description = "PILLAR OF EASYCURE AND WELLNESS HAVEN offers wellness products, free practical education, and community support for healthier everyday living.",
     image = "",
     url = window.location.href,
     type = "website",
@@ -107,7 +107,7 @@ export function setProductSchema(product, url) {
       availability: availability,
       seller: {
         "@type": "Organization",
-        name: "EASYLIFE WELLNESS HUB",
+        name: "PILLAR OF EASYCURE AND WELLNESS HAVEN",
       },
     },
     aggregateRating: product.rating

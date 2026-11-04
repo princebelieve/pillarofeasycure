@@ -40,11 +40,11 @@ export default function ProductDetails() {
 
           // Set meta tags for social sharing and SEO
           setMetaTags({
-            title: `${data.name} | EASYLIFE WELLNESS HUB`,
+            title: `${data.name} | PILLAR OF EASYCURE AND WELLNESS HAVEN`,
             description:
               data.fullDescription ||
               data.shortDescription ||
-              `Shop ${data.name} from EASYLIFE WELLNESS HUB.`,
+              `Shop ${data.name} from PILLAR OF EASYCURE AND WELLNESS HAVEN.`,
             image: data.coverImage,
             url: productUrl,
             type: "product",
@@ -282,7 +282,7 @@ export default function ProductDetails() {
                   onClick={() => {
                     const shareUrl = getShareUrl(product._id, product.name);
                     window.open(
-                      `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=Check out ${encodeURIComponent(product.name)} from EASYLIFE WELLNESS HUB`,
+                      `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=Check out ${encodeURIComponent(product.name)} from PILLAR OF EASYCURE AND WELLNESS HAVEN`,
                       "_blank",
                       "width=600,height=400",
                     );

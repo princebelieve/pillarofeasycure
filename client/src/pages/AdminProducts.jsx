@@ -139,6 +139,7 @@ export default function AdminProducts() {
         >
           <div>
             <h1>Admin Products</h1>
+            {isAdmin && <button type="button" onClick={() => navigate("/admin/data?dataset=products")}>Import / Export products</button>}
             <p style={{ marginTop: 8, color: "#555" }}>
               Manage product catalog and edit existing listings from the product
               grid.

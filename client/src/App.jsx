@@ -22,6 +22,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import AdminProducts from "./pages/AdminProducts";
+import AdminDataTransfer from "./pages/AdminDataTransfer";
 import AdminProductForm from "./pages/AdminProductForm";
 
 import RequireAdmin from "./components/RequireAdmin.jsx";
@@ -74,7 +75,7 @@ function CanonicalUpdater() {
   const location = useLocation();
 
   useEffect(() => {
-    const canonicalUrl = `https://easylifewellnesshub.com${location.pathname}${location.search}`;
+    const canonicalUrl = `https://pillarofeasycure.com${location.pathname}${location.search}`;
     let canonical = document.querySelector('link[rel="canonical"]');
 
     if (!canonical) {
@@ -119,6 +120,7 @@ export default function App() {
         <PullToRefresh />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
+            <Route path="/admin/data" element={<RequireAdmin><AdminLayout><AdminDataTransfer /></AdminLayout></RequireAdmin>} />
             <Route path="/" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
             <Route path="/product/:id" element={<ProductDetails />} />

@@ -1,12 +1,12 @@
 {
-  "name": "EASYLIFE WELLNESS HUB",
-  "short_name": "EASYLIFE",
-  "description": "EASYLIFE WELLNESS HUB is a naturopathic network marketing platform dedicated to natural health, wellness, and financial freedom.",
+  "name": "PILLAR OF EASYCURE AND WELLNESS HAVEN",
+  "short_name": "EasyCure",
+  "description": "PILLAR OF EASYCURE AND WELLNESS HAVEN is a naturopathic network marketing platform dedicated to natural health, wellness, and financial freedom.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f6e8c4",
-  "theme_color": "#063b20",
+  "background_color": "#edf5fa",
+  "theme_color": "#243b35",
   "badge": "/icon-192.png",
   "icons": [
     {

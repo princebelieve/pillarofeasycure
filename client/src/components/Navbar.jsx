@@ -101,12 +101,12 @@ export default function Navbar() {
       <Link to="/" className="navbar-brand" onClick={() => setOpen(false)}>
         <img
           src="/logo.png"
-          alt="EASYLIFE WELLNESS HUB"
+          alt="PILLAR OF EASYCURE AND WELLNESS HAVEN"
           className={`logo ${scrolled ? "hide-logo" : ""}`}
         />
-        <span className="brand-name" aria-label="EASYLIFE WELLNESS HUB">
-          <span>EASYLIFE</span>
-          <span>WELLNESS HUB</span>
+        <span className="brand-name" aria-label="PILLAR OF EASYCURE AND WELLNESS HAVEN">
+          <span>PILLAR OF EASYCURE</span>
+          <span>AND WELLNESS HAVEN</span>
         </span>
       </Link>
 
@@ -118,13 +118,13 @@ export default function Navbar() {
               Explore <ChevronDown size={16} aria-hidden="true" />
             </button>
             {activeDropdown === "explore" && <div className="nav-dropdown-menu" role="menu">
-              <Link role="menuitem" to="/about" onClick={() => setActiveDropdown(null)}>About EASYLIFE</Link>
+              <Link role="menuitem" to="/about" onClick={() => setActiveDropdown(null)}>About EASYCURE</Link>
               <Link role="menuitem" to="/journey" onClick={() => setActiveDropdown(null)}>Our Journey</Link>
               <Link role="menuitem" to="/outreach" onClick={() => setActiveDropdown(null)}>Community Outreach</Link>
               <Link role="menuitem" to="/testimonials" onClick={() => setActiveDropdown(null)}>Testimonials</Link>
               <Link role="menuitem" to="/our-director" onClick={() => setActiveDropdown(null)}>Our Director</Link>
-              <a role="menuitem" href="https://clinic.easylifewellnesshub.com" target="_blank" rel="noreferrer">Visit EASYLIFE Clinic</a>
-              <a role="menuitem" href="https://supermarket.easylifewellnesshub.com" target="_blank" rel="noreferrer">Visit EASYLIFE Supermarket</a>
+              <a role="menuitem" href="https://resyinpublications.com/" target="_blank" rel="noreferrer">RESYIN for Readers</a>
+              <a role="menuitem" href="https://resyinpublications.com/" target="_blank" rel="noreferrer">RESYIN for Writers</a>
             </div>}
           </div>
           <div className="nav-dropdown">
@@ -273,7 +273,7 @@ export default function Navbar() {
               }
             }}
             aria-label="Install app"
-            title="Install EASYLIFE App"
+            title="Install EASYCURE App"
           >
             <Download size={20} />
           </button>
@@ -304,13 +304,13 @@ export default function Navbar() {
               Explore <ChevronDown size={18} aria-hidden="true" />
             </button>
             {activeMobileSection === "explore" && <div className="mobile-nav-submenu">
-              <Link to="/about" onClick={() => setOpen(false)}>About EASYLIFE</Link>
+              <Link to="/about" onClick={() => setOpen(false)}>About EASYCURE</Link>
               <Link to="/journey" onClick={() => setOpen(false)}>Our Journey</Link>
               <Link to="/outreach" onClick={() => setOpen(false)}>Community Outreach</Link>
               <Link to="/testimonials" onClick={() => setOpen(false)}>Testimonials</Link>
               <Link to="/our-director" onClick={() => setOpen(false)}>Our Director</Link>
-              <a href="https://clinic.easylifewellnesshub.com" target="_blank" rel="noreferrer">Visit EASYLIFE Clinic</a>
-              <a href="https://supermarket.easylifewellnesshub.com" target="_blank" rel="noreferrer">Visit EASYLIFE Supermarket</a>
+              <a href="https://resyinpublications.com/" target="_blank" rel="noreferrer">RESYIN for Readers</a>
+              <a href="https://resyinpublications.com/" target="_blank" rel="noreferrer">RESYIN for Writers</a>
             </div>}
           </div>
 

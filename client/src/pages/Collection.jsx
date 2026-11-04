@@ -88,9 +88,9 @@ export default function Collection() {
           <div>
             <span className="eyebrow">NATUROPATHIC WELLNESS</span>
             <h1>Natural solutions for a healthier, longer, vibrant life.</h1>
-            <p>Explore herbal products, supplements, wellness devices, and everyday care essentials from EASYLIFE WELLNESS HUB.</p>
+            <p>Explore herbal products, supplements, wellness devices, and everyday care essentials from PILLAR OF EASYCURE AND WELLNESS HAVEN.</p>
           </div>
-          <img src="/image-15.png" alt="EASYLIFE herbal products, wellness equipment, and natural care essentials" />
+          <img src="/image-15.png" alt="EASYCURE herbal products, wellness equipment, and natural care essentials" />
         </div>
       </section>
 

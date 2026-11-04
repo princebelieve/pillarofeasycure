@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import useAuth from "../context/AuthContext";
 
 export default function Footer() {
@@ -9,13 +9,13 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src="/logo.png" alt="EASYLIFE WELLNESS HUB" className="footer-logo" />
-          <h3>EASYLIFE WELLNESS HUB (EWH)</h3>
+          <img src="/logo.png" alt="PILLAR OF EASYCURE AND WELLNESS HAVEN" className="footer-logo" />
+          <h3>PILLAR OF EASYCURE AND WELLNESS HAVEN</h3>
           <p>Nature Cares & Healthy Living.</p>
-          <p className="footer-address">95, Akpakpava, Benin City, Edo State, Nigeria</p>
+          <p className="footer-address">13, Uwumarongie Street, GRA, Benin City, Edo State, Nigeria</p>
         </div>
 
-        <nav className="footer-links" aria-label="Explore EASYLIFE">
+        <nav className="footer-links" aria-label="Explore EASYCURE">
           <h4>Explore</h4>
           <Link to="/collection">Shop Wellness Products</Link>
           <Link to="/testimonials">Testimonials</Link>
@@ -36,21 +36,16 @@ export default function Footer() {
             <Link to="/register">Register</Link>
           </>}
           <Link to="/support">Support Guide</Link>
-          <Link to="/how-to-use">How to Use EASYLIFE</Link>
+          <Link to="/how-to-use">How to Use EASYCURE</Link>
         </nav>
 
         <div className="footer-contact">
           <h4>Contact & Follow</h4>
-          <a href="mailto:support@easylifewellnesshub.com">support@easylifewellnesshub.com</a>
-          <a href="tel:+2348089938820">08089938820</a>
-          <a href="https://clinic.easylifewellnesshub.com" target="_blank" rel="noopener noreferrer">Visit EASYLIFE Clinic</a>
-          <a href="https://supermarket.easylifewellnesshub.com" target="_blank" rel="noopener noreferrer">Visit EASYLIFE Supermarket</a>
-          <div className="footer-social">
-            <a href="https://www.facebook.com/share/19KyBKsDzg/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook size={24} /></a>
-            <a href="https://wa.me/2348089938820" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp size={24} /></a>
-            <a href="https://www.youtube.com/@EasylifeWellnessHub" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube size={24} /></a>
-            <a href="https://www.tiktok.com/@easy.life.wellnes6" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok size={24} /></a>
-          </div>
+          <a href="mailto:pillarofeasycure@gmail.com">pillarofeasycure@gmail.com</a>
+          <a href="tel:+2348029778813">08029778813</a>
+          <a href="https://resyinpublications.com/" target="_blank" rel="noopener noreferrer">RESYIN for Readers</a>
+          <a href="https://resyinpublications.com/" target="_blank" rel="noopener noreferrer">RESYIN for Writers</a>
+          <div className="footer-social"><a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp size={24} /></a></div>
         </div>
       </div>
 
@@ -59,7 +54,7 @@ export default function Footer() {
         <Link to="/refund-policy">Refund & Returns</Link>
         <Link to="/terms-conditions">Terms & Conditions</Link>
       </div>
-      <div className="footer-bottom">(c) {new Date().getFullYear()} EASYLIFE WELLNESS HUB. All rights reserved.</div>
+      <div className="footer-bottom">(c) {new Date().getFullYear()} PILLAR OF EASYCURE AND WELLNESS HAVEN. All rights reserved.</div>
     </footer>
   );
 }

@@ -24,7 +24,7 @@ function buildProductMarkup(product, productUrl) {
     : regularPrice;
   const availability = product.inStock !== false && Number(product.stock || 0) > 0;
   const description = product.fullDescription || product.shortDescription || product.name;
-  const title = `${product.name} | EASYLIFE WELLNESS HUB`;
+  const title = `${product.name} | PILLAR OF EASYCURE AND WELLNESS HAVEN`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -42,7 +42,7 @@ function buildProductMarkup(product, productUrl) {
       availability: availability
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
-      seller: { "@type": "Organization", name: "EASYLIFE WELLNESS HUB" },
+      seller: { "@type": "Organization", name: "PILLAR OF EASYCURE AND WELLNESS HAVEN" },
     },
   };
 

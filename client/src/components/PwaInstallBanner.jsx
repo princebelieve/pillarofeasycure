@@ -3,9 +3,9 @@ import { Download, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const benefits = [
-  "Install EASYLIFE for one-tap access from your home screen.",
+  "Install EASYCURE for one-tap access from your home screen.",
   "Get timely order, community, and wellness updates.",
-  "Open EASYLIFE faster, with an app-like full-screen experience.",
+  "Open EASYCURE faster, with an app-like full-screen experience.",
 ];
 
 function isInstalled() {
@@ -81,10 +81,10 @@ export default function PwaInstallBanner() {
   }
 
   return (
-    <aside className={`pwa-install-pill${leaving ? " leaving" : ""}`} aria-label="Install the EASYLIFE app">
+    <aside className={`pwa-install-pill${leaving ? " leaving" : ""}`} aria-label="Install the EASYCURE app">
       <Download size={17} aria-hidden="true" />
       <div className="pwa-install-pill-copy">
-        <strong>EASYLIFE App</strong>
+        <strong>EASYCURE App</strong>
         <span key={benefitIndex}>{benefits[benefitIndex]}</span>
       </div>
       <button type="button" onClick={handleInstall}>Install</button>

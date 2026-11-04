@@ -66,7 +66,7 @@ export default function SiteAnnouncementBanner() {
       {item.videoFile ? <video className="site-announcement-media" controls playsInline preload="metadata" poster={item.image || undefined} src={item.videoFile} /> : item.audioFile ? <div className="site-announcement-audio"><audio controls preload="metadata" src={item.audioFile} /></div> : item.image ? <img className="site-announcement-media" src={item.image} alt={item.title || item.name || "Announcement"} /> : null}
       <div className="site-announcement-copy">
         <span className="site-announcement-label">{item.contentType || "Announcement"}</span>
-        <h2 id="site-announcement-title">{item.title || item.name || "EASYLIFE announcement"}</h2>
+        <h2 id="site-announcement-title">{item.title || item.name || "EASYCURE announcement"}</h2>
         {item.testimony && <p>{item.testimony}</p>}
         {item.createdAt && <small>Uploaded {relativeDateTime(item.createdAt)}</small>}
         {item.updatedAt && item.updatedAt !== item.createdAt && <small>Updated {relativeDateTime(item.updatedAt)}</small>}
