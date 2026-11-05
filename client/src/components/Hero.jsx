@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const heroImages = ["/image-1.png", "/image-2.png", "/image-3.png", "/image-4.png"];
+const heroImages = ["/logo.png"];
 const heroBodyText =
-  "Wellness education, natural wellness products, practical training, and community support for healthier, stronger lives.";
+  "Wellness education, natural wellness products and customer support for healthier, stronger lives.";
 
 export default function Hero() {
   const navigate = useNavigate();

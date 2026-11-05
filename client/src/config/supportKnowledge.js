@@ -3,11 +3,11 @@ const supportKnowledge = [
     slug: "about-easy-life",
     title: "About PILLAR OF EASYCURE AND WELLNESS HAVEN",
     url: "/about",
-    summary: "PILLAR OF EASYCURE AND WELLNESS HAVEN provides wellness products, free practical education, and community support for healthier everyday living.",
+    summary: "PILLAR OF EASYCURE AND WELLNESS HAVEN provides wellness products, product guidance, and community support for healthier everyday living.",
     keywords: ["about", "company", "vision", "mission", "easycure", "wellness hub", "who are you"],
     details: [
-      "Our vision is to help people build healthier habits and stronger communities through wellness education, practical learning, and support.",
-      "Our mission includes wellness education, quality products, wellness equipment, leadership development, and community outreach.",
+      "Our vision is to help people build healthier habits and stronger communities through responsible product use and customer support.",
+      "Our mission includes quality products, wellness equipment, responsible product use, and customer support.",
     ],
   },
   {
@@ -44,35 +44,13 @@ const supportKnowledge = [
     ],
   },
   {
-    slug: "wellness-education",
-    title: "Wellness Education",
-    url: "/register",
-    summary: "Free practical learning on wellness, hygiene, responsible product use, leadership, and community outreach.",
-    keywords: ["wellness education", "hygiene", "training", "leadership", "community", "outreach"],
-    details: [
-      "EASYCURE provides practical learning in wellness, hygiene, responsible product use according to label directions, leadership, and public speaking.",
-      "Registered members do not receive commissions or rewards for recruiting other members.",
-    ],
-  },
-  {
-    slug: "training-and-leadership",
-    title: "Training & Leadership",
-    url: "/register",
-    summary: "Build practical skills, confidence, leadership ability, and a stronger network through EASYCURE learning opportunities.",
-    keywords: ["training", "leadership", "learning", "mentorship", "public speaking", "sales", "personal branding"],
-    details: [
-      "Contact EasyCure for the next wellness training session and its location.",
-      "Training covers wellness and hygiene education, responsible product use according to label directions, leadership, and community participation.",
-    ],
-  },
-  {
     slug: "membership",
     title: "Membership",
     url: "/register",
-    summary: "Learn freely and participate fully in the EASYCURE community.",
-    keywords: ["membership", "member", "join", "community", "register", "mentorship"],
+    summary: "Create an EasyCure account to manage your shopping and orders.",
+    keywords: ["membership", "member", "join", "community", "register"],
     details: [
-      "Registered members may attend wellness education and community learning and join official health-awareness outreaches.",
+      "Account holders can view orders, upload payment receipts when required, and manage their contact details.",
       "Create an account to begin. Account verification may be required before some features become available.",
     ],
   },
@@ -83,7 +61,7 @@ const supportKnowledge = [
     summary: "EASYCURE works with wellness companies, schools, churches, NGOs, corporate organizations, and community associations to create meaningful local impact.",
     keywords: ["outreach", "partnership", "sponsor", "school", "church", "ngo", "community", "organization"],
     details: [
-      "Partners can discuss sponsorship, learning events, product showcases, wellness education, and community programs.",
+      "Partners can discuss product showcases and community partnerships.",
       "Use the Contact page to describe your organization, goals, preferred area, and proposed collaboration.",
     ],
   },
@@ -147,7 +125,7 @@ const supportKnowledge = [
     slug: "contact-and-support",
     title: "Contact & Support",
     url: "/contact",
-    summary: "Contact EASYCURE about wellness products, training, membership, outreach, partnerships, delivery, or order support.",
+    summary: "Contact EASYCURE about wellness products, accounts, orders, partnerships, delivery, or order support.",
     keywords: ["contact", "support", "help", "whatsapp", "phone", "email", "call", "enquiry"],
     details: [
       "WhatsApp and phone support: 08029778813.",

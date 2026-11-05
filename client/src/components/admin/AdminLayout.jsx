@@ -205,7 +205,7 @@ export default function AdminLayout({ children }) {
           </button>
 
           <Link to="/admin" className="admin-brand">
-            <img src="/logo.png" alt="logo" className="admin-logo" />
+            <img src="/brand-mark.png" alt="Pillar of EasyCure" className="admin-logo" />
 
             <div>
               <strong>EASYCURE</strong>

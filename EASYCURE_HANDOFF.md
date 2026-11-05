@@ -18,7 +18,9 @@ Business name, BN number, address, email, and phone are taken from the supplied 
 
 ## Assets still to swap
 
-Images are retained as requested, including the existing logo, favicon/PWA icons, CEO portrait, and promotional/community photographs. These are temporary assets, not final EasyCure artwork. Replace the files in `client/public` before launch. The provided logo screenshot spells Easycare; the website follows the registered Easycure name.
+The supplied logo has been regenerated with the corrected EASYCURE spelling and installed as the website logo, compact navigation emblem, favicon set, Apple touch icon, and PWA icons. The master and regeneration details are in `client/assets`. Inherited CEO, leadership, and community photographs referenced by the pages have been replaced with the EasyCure logo until EasyCure's own photographs are supplied. Original image files remain in the source folder, but the pages no longer reference them.
+
+Inherited training sections, programme promises, mentorship references, and training enquiries have been removed from the homepage, other pages, support assistant, backend support answers, and policy copy. The former membership promotion now explains actual account features such as orders, receipts, profile management, and distributor applications. Database-managed stories and media have not been edited.
 
 No EASYLIFE clinic/supermarket affiliation, social account, optometrist credential, or fixed meeting schedule is carried into EasyCure's text.
 

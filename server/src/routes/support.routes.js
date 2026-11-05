@@ -25,7 +25,7 @@ router.post("/answer", (req, res) => {
     .map((entry) => ({ entry, score: entry.keywords.reduce((score, keyword) => score + (question.includes(keyword) ? keyword.split(" ").length : 0), 0) }))
     .sort((a, b) => b.score - a.score)[0];
 
-  if (!best?.score) return res.json({ answer: "I can help with products, payments, receipt upload, delivery, returns, distributor applications, training, and account access. Please try one of those topics, or use WhatsApp for order-specific help." });
+  if (!best?.score) return res.json({ answer: "I can help with products, payments, receipt upload, delivery, returns, distributor applications and account access. Please try one of those topics, or use WhatsApp for order-specific help." });
   return res.json({ answer: best.entry.answer, link: best.entry.link || "", linkLabel: best.entry.linkLabel || "" });
 });
 

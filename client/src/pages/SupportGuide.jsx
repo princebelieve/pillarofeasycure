@@ -14,7 +14,7 @@ export default function SupportGuide() {
               <h1>Clear answers for your wellness journey.</h1>
               <p>
                 Browse the PILLAR OF EASYCURE AND WELLNESS HAVEN guide for products, natural
-                wellness, training, membership, orders, delivery, policies,
+                wellness products, accounts, orders, delivery, policies,
                 and community support.
               </p>
             </div>

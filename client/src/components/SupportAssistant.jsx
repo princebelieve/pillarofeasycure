@@ -6,7 +6,7 @@ import { askSupportBot } from "../services/api";
 const intentRules = [
   {
     test: /^(hi|hello|hey|good morning|good afternoon|good evening|greetings)\b/i,
-    reply: { text: "Hello! Welcome to PILLAR OF EASYCURE AND WELLNESS HAVEN. Are you looking for wellness products, training, membership, outreach, or support?" },
+    reply: { text: "Hello! Welcome to PILLAR OF EASYCURE AND WELLNESS HAVEN. Are you looking for wellness products, accounts, orders, or support?" },
   },
   {
     test: /\b(thank you|thanks|thank u|appreciate)\b/i,
@@ -23,14 +23,6 @@ const intentRules = [
   {
     test: /\b(join|sign up|signup|register|become a member|membership)\b/i,
     entry: "membership",
-  },
-  {
-    test: /\b(training|learn|leadership|mentor|mentorship|public speaking|financial literacy)\b/i,
-    entry: "training-and-leadership",
-  },
-  {
-    test: /\b(wellness education|hygiene|training|community outreach|outreach)\b/i,
-    entry: "wellness-education",
   },
   {
     test: /\b(product|products|shop|buy|supplement|herbal|tea|personal care)\b/i,
@@ -108,7 +100,7 @@ function getReply(input) {
   if (knowledgeEntry) return replyFromEntry(knowledgeEntry);
 
   return {
-    text: "I can help with wellness products, equipment, testing, training, membership, orders, delivery, returns, and support. Which one would you like to know about?",
+    text: "I can help with wellness products, equipment, accounts, orders, delivery, returns, and support. Which one would you like to know about?",
   };
 }
 
@@ -118,7 +110,7 @@ export default function SupportAssistant() {
     {
       id: 1,
       role: "assistant",
-      text: "Hi! I’m EASYCURE’s support assistant. I can help with wellness products, training, services, delivery, returns, and contact options.",
+      text: "Hi! I’m EASYCURE’s support assistant. I can help with wellness products, services, delivery, returns, and contact options.",
     },
   ]);
   const [draft, setDraft] = useState("");
@@ -184,7 +176,7 @@ export default function SupportAssistant() {
             {[
               "Hello",
               "What wellness products do you offer?",
-              "What training is available?",
+              "How can I track my order?",
               "How do I upload my payment receipt?",
               "I need a refund",
               "How can I join the community?",

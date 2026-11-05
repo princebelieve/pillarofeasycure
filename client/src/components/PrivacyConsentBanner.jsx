@@ -24,7 +24,7 @@ export default function PrivacyConsentBanner() {
       <div className="privacy-consent-content">
         <strong>PILLAR OF EASYCURE AND WELLNESS HAVEN: wellness, learning, and opportunity.</strong>
         <p>
-          Browse wellness products, learn through training, join the community,
+          Browse wellness products, create an account,
           request support, and manage orders. EASYCURE uses Google Sign-In to
           create and manage your account, and Gmail API only to send
           account-verification, password-reset, and important service emails from

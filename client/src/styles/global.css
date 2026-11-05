@@ -6587,3 +6587,17 @@ button:hover,
 .navbar { background: rgba(237,245,250,.97); border-bottom-color: #d6c8e5; }
 .footer { background: #243b35; }
 .data-transfer-card select { display: block; margin: 10px 0; width: min(100%, 420px); padding: 12px; }
+
+/* Keep the full business name legible; compact navigation uses the emblem. */
+.footer-logo { width: 180px; max-width: 100%; height: auto; border-radius: 10px; }
+.admin-logo { object-fit: contain; border-radius: 0; }
+
+/* Logo placeholders must stay fully visible instead of using portrait crops. */
+.director-home-portrait:has(img[src="/logo.png"]),
+.director-portrait-card:has(> img[src="/logo.png"]) { background: #fff; }
+.director-home-portrait img[src="/logo.png"] { position: static; display: block; width: min(90%, 300px); height: auto; margin: 65px auto 20px; transform: none; filter: none; object-fit: contain; }
+.director-portrait-card > img[src="/logo.png"] { position: static; display: block; width: min(90%, 340px); height: auto; margin: 75px auto 130px; transform: none; filter: none; object-fit: contain; }
+.easy-about-mark > img[src="/logo.png"] { object-fit: contain; background: #fff; padding: 24px; box-sizing: border-box; }
+.easy-about-mark .easy-about-badge { display: none; }
+.easy-pillar-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 700px) { .easy-pillar-grid { grid-template-columns: 1fr; } }

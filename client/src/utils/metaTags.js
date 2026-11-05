@@ -5,7 +5,7 @@
 export function setMetaTags(config) {
   const {
     title = "PILLAR OF EASYCURE AND WELLNESS HAVEN",
-    description = "PILLAR OF EASYCURE AND WELLNESS HAVEN offers wellness products, free practical education, and community support for healthier everyday living.",
+    description = "PILLAR OF EASYCURE AND WELLNESS HAVEN offers wellness products, product guidance, and community support for healthier everyday living.",
     image = "",
     url = window.location.href,
     type = "website",

@@ -100,7 +100,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Link to="/" className="navbar-brand" onClick={() => setOpen(false)}>
         <img
-          src="/logo.png"
+          src="/brand-mark.png"
           alt="PILLAR OF EASYCURE AND WELLNESS HAVEN"
           className={`logo ${scrolled ? "hide-logo" : ""}`}
         />

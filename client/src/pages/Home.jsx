@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HeartPulse, Sprout, Users, BriefcaseBusiness, ArrowRight, Handshake, Truck } from "lucide-react";
+import { HeartPulse, Sprout, Users, ArrowRight, Handshake, Truck } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductGrid from "../components/ProductGrid";
@@ -14,12 +14,10 @@ import useAuth from "../context/AuthContext";
 
 const pillars = [
   { icon: Sprout, title: "Naturopathic Wellness", text: "Natural solutions for a healthier, longer, and vibrant life." },
-  { icon: BriefcaseBusiness, title: "Wellness Education", text: "Free practical learning on wellness, hygiene, and responsible product use." },
   { icon: Users, title: "Naturopathic Equipment", text: "High-quality wellness equipment for home use and professional care." },
   { icon: ArrowRight, title: "Community Outreach", text: "Learn, serve, and create meaningful community impact." },
 ];
 
-const trainings = ["Wellness and hygiene education", "Responsible product use according to label directions", "Leadership and public speaking", "Community outreach and customer relationships"];
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
@@ -30,9 +28,9 @@ export default function Home() {
 
   useEffect(() => {
     const phrases = [
-      "Wellness education. Community. Support.",
+      "Wellness products. Care. Support.",
       "Natural health for a vibrant life.",
-      "Learn together. Serve your community.",
+      "Find support for your wellness journey.",
     ];
     let phraseIndex = 0;
     let characterIndex = 0;
@@ -70,7 +68,7 @@ export default function Home() {
               <h1>Empowering People.<br /><em>Transforming Lives.</em></h1>
               <p className="easy-hero-tagline">{typedText}<span className="typing-caret" aria-hidden="true">|</span></p>
               <p className="easy-purpose-label">What PILLAR OF EASYCURE AND WELLNESS HAVEN does</p>
-              <p className="easy-hero-copy">PILLAR OF EASYCURE AND WELLNESS HAVEN offers wellness products, free practical education, and community support for healthier everyday living.</p>
+              <p className="easy-hero-copy">PILLAR OF EASYCURE AND WELLNESS HAVEN offers wellness products, product guidance, and community support for healthier everyday living.</p>
               <div className="easy-actions">
                 <Link className="easy-btn easy-btn-primary" to="/collection">Shop Wellness Products <ArrowRight size={18} /></Link>
                 <Link className="easy-btn easy-btn-light" to={isLoggedIn ? "/dashboard" : "/register"}>{isLoggedIn ? "Go to your dashboard" : "Join the Community"}</Link>
@@ -97,12 +95,12 @@ export default function Home() {
 
         <ServicePromoCarousel />
 
-        <section className="director-home-feature"><div className="container director-home-feature-grid"><div className="director-home-portrait"><span>MEET OUR DIRECTOR</span><img src="/ceo.png" alt="EasyCure leadership — temporary portrait" /></div><div className="director-home-copy"><p className="easy-eyebrow">LEADERSHIP WITH HEART</p><h2>Meet Professor Clara Obehi Egonmwan.</h2><p>Professor Clara Obehi Egonmwan leads Pillar of EasyCure and Wellness Haven. With her team, she brings wellness products, practical education, and community support together in one place.</p><Link to="/our-director" className="easy-btn easy-btn-primary">Meet our Director <ArrowRight size={18} /></Link></div></div></section>
+        <section className="director-home-feature"><div className="container director-home-feature-grid"><div className="director-home-portrait"><span>MEET OUR DIRECTOR</span><img src="/logo.png" alt="Pillar of EasyCure and Wellness Haven logo" /></div><div className="director-home-copy"><p className="easy-eyebrow">LEADERSHIP WITH HEART</p><h2>Meet Professor Clara Obehi Egonmwan.</h2><p>Professor Clara Obehi Egonmwan leads Pillar of EasyCure and Wellness Haven. With her team, she brings wellness products, product guidance, and community support together in one place.</p><Link to="/our-director" className="easy-btn easy-btn-primary">Meet our Director <ArrowRight size={18} /></Link></div></div></section>
 
         <section className="easy-intro section reveal">
           <div className="container easy-intro-grid">
             <p className="easy-eyebrow">WELCOME TO EASYCURE</p>
-            <div><h2>A better life starts with the right support.</h2><p>We are an independent wellness, entrepreneurship and leadership development organization. We equip people with knowledge, quality products, practical skills and a community that helps them move forward.</p><img className="easy-inline-image hover-lift" src="/image-1.png" alt="EASYCURE wellness training session" /></div>
+            <div><h2>A better life starts with the right support.</h2><p>Pillar of EasyCure and Wellness Haven offers wellness products and support for healthier everyday living. Explore our collection and contact us for product and order enquiries.</p><img className="easy-inline-image hover-lift" src="/logo.png" alt="Pillar of EasyCure and Wellness Haven logo" /></div>
           </div>
         </section>
 
@@ -112,13 +110,12 @@ export default function Home() {
 
         <section className="section easy-products reveal"><div className="container"><div className="easy-section-heading easy-heading-row"><div><p className="easy-eyebrow">NATUROPATHIC WELLNESS</p><h2>Natural solutions for a healthier, longer, vibrant life.</h2><p className="easy-products-intro">These featured products and more, are available to purchase from PILLAR OF EASYCURE AND WELLNESS HAVEN. Open any product to view its description, price, availability, and ordering options.</p></div><Link to="/collection" className="easy-text-link">Explore products <ArrowRight size={17} /></Link></div>{products.length ? <ProductGrid products={products} /> : <div className="easy-empty"><Sprout size={30} /><p>Our wellness product collection is being prepared. Please check back soon.</p></div>}</div></section>
 
-        <section className="section easy-training-section reveal"><div className="container easy-two-column"><div><p className="easy-eyebrow">WELLNESS EDUCATION</p><h2>Learn practical wellness, hygiene, and community skills.</h2><p>Registered members can attend wellness education and community learning sessions; contact us for the next session. Sessions cover wellness and hygiene education, responsible product use according to label directions, leadership, and community outreach.</p><Link to={isLoggedIn ? "/dashboard" : "/register"} className="easy-btn easy-btn-primary breathing-button">{isLoggedIn ? "Go to your dashboard" : "Join the community"} <ArrowRight size={18} /></Link><ul className="easy-training-list">{trainings.map((item) => <li key={item}>✓ {item}</li>)}</ul></div><img className="easy-section-image" src="/image-5.png" alt="EASYCURE wellness education and community training" /></div></section>
 
         {testimonials.length > 0 && <section className="section testimonials-showcase reveal"><div className="container"><div className="easy-section-heading easy-heading-row"><div><p className="easy-eyebrow">COMMUNITY STORIES</p><h2>See how the EASYCURE community is growing.</h2></div><Link className="easy-text-link" to="/testimonials">View all stories <ArrowRight size={17} /></Link></div><div className="testimonial-home-grid">{testimonials.map((item) => { const embedUrl = getVideoEmbedUrl(item.videoUrl); const isVideoStory = Boolean(item.videoFile || embedUrl); return <article className={`testimonial-home-card content-card${isVideoStory ? " video-story-card" : ""}`} key={item._id}>{(item.videoFile || item.audioFile || embedUrl || item.image) && <div className="testimonial-home-media">{item.videoFile ? <video controls preload={item.image ? "none" : "metadata"} poster={item.image || undefined} src={item.videoFile} /> : item.audioFile ? <audio controls preload="metadata" src={item.audioFile} /> : embedUrl ? <iframe title={`${item.name} testimonial video`} src={embedUrl} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> : <img src={item.image} alt={item.name} />}</div>}<div className="testimonial-home-body">{item.createdAt && <small className="testimonial-date">Uploaded {relativeDateTime(item.createdAt)}</small>}{item.updatedAt && item.updatedAt !== item.createdAt && <small className="testimonial-date">Updated {relativeDateTime(item.updatedAt)}</small>}{isVideoStory && item.title && <h3 className="video-story-title">{item.title}</h3>}<p>“{item.testimony}”</p><strong>{item.name}</strong>{item.role && <span>{item.role}</span>}<PostShareButton title={item.title || item.name} text={item.testimony} url={`${window.location.origin}/testimonials#${item._id}`} /></div></article>; })}</div></div></section>}
 
-        <section className="easy-membership"><div className="container easy-membership-grid"><div><p className="easy-eyebrow">MEMBERSHIP</p><h2>Learn freely. Participate fully.</h2><p>Registered members receive wellness education and community learning, wellness education, leadership development, and opportunities to join official health-awareness outreaches.</p></div><div className="easy-member-card content-card"><strong>Registered members can</strong><ul><li>Attend free weekly wellness and hygiene training</li><li>Learn responsible product use according to label directions</li><li>Follow EASYCURE to official health-awareness outreaches</li><li>Build confidence, leadership, and community connections</li></ul><Link to={isLoggedIn ? "/dashboard" : "/register"} className="easy-btn easy-btn-light breathing-button">{isLoggedIn ? "Open your dashboard" : "Become a member"}</Link></div></div></section>
+        <section className="easy-membership"><div className="container easy-membership-grid"><div><p className="easy-eyebrow">YOUR EASYCURE ACCOUNT</p><h2>Your wellness shopping, in one place.</h2><p>Create an account to manage your orders, keep your details up to date, and get support from the EasyCure team.</p></div><div className="easy-member-card content-card"><strong>With your account, you can</strong><ul><li>View your orders and delivery updates</li><li>Upload payment receipts when required</li><li>Manage your profile and contact details</li><li>Apply to become a distributor</li></ul><Link to={isLoggedIn ? "/dashboard" : "/register"} className="easy-btn easy-btn-light breathing-button">{isLoggedIn ? "Open your dashboard" : "Create an account"}</Link></div></div></section>
 
-        <section className="section easy-outreach reveal"><div className="container easy-three-column"><img className="easy-section-image" src="/image-7.png" alt="EASYCURE community outreach and partnership activity" /><div><p className="easy-eyebrow">OUTREACH & PARTNERSHIPS</p><h2>Growing healthier, stronger communities together.</h2><p>We welcome wellness companies, schools, churches, NGOs, corporate organizations and community associations that want to sponsor learning, showcase products or create meaningful local impact.</p><Link to="/contact" className="easy-text-link">Discuss a partnership <Handshake size={18} /></Link></div><div className="easy-outreach-mark content-card"><HeartPulse size={48} /><span>COMMUNITY<br />IMPACT</span></div></div></section>
+        <section className="section easy-outreach reveal"><div className="container easy-three-column"><img className="easy-section-image" src="/logo.png" alt="Pillar of EasyCure and Wellness Haven logo" /><div><p className="easy-eyebrow">OUTREACH & PARTNERSHIPS</p><h2>Growing healthier, stronger communities together.</h2><p>We welcome wellness companies, schools, churches, NGOs, corporate organizations and community associations that want to sponsor learning, showcase products or create meaningful local impact.</p><Link to="/contact" className="easy-text-link">Discuss a partnership <Handshake size={18} /></Link></div><div className="easy-outreach-mark content-card"><HeartPulse size={48} /><span>COMMUNITY<br />IMPACT</span></div></div></section>
 
         <section className="easy-closing reveal"><div className="container"><p className="easy-eyebrow">WELLNESS STARTS WITH KNOWLEDGE</p><h2>We help you learn and live well.</h2><p className="easy-closing-copy">Live the EASYCURE.<br />Healthy body. Strong mind. Supportive community.</p><div className="easy-actions"><Link className="easy-btn easy-btn-primary breathing-button" to={isLoggedIn ? "/dashboard" : "/register"}>{isLoggedIn ? "Go to your dashboard" : "Join the community"}</Link><Link className="easy-btn easy-btn-light breathing-button" to="/contact">Contact EASYCURE</Link></div></div></section>
       </main>

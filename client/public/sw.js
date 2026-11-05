@@ -29,8 +29,8 @@ self.addEventListener("push", (event) => {
 
     const options = {
       body: data.body || "You have a new notification",
-      icon: data.icon || "/logo.png",
-      badge: data.badge || "/logo.png",
+      icon: data.icon || "/icon-192.png",
+      badge: data.badge || "/icon-192.png",
       // A shared tag causes each new alert to replace the previous one. Use a
       // stable event id when the server has one, otherwise keep alerts unique.
       tag:
