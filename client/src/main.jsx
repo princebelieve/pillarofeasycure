@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 import "./index.css";
 import "./styles/global.css";
+import "./styles/easycure-theme.css";
 import { registerServiceWorker } from "./registerServiceWorker";
 
 if ("scrollRestoration" in window.history) {

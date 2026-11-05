@@ -11,14 +11,14 @@ This checkout adapts the existing EASYLIFE application for **PILLAR OF EASYCURE 
 - Registered business address: 13, Uwumarongie Street, GRA, Benin City, Edo State, Nigeria
 - Public business email: pillarofeasycure@gmail.com
 - Public business phone/WhatsApp: +2348029778813
-- Palette: leaf green, purple, sky blue, and soft pink
+- Palette: fresh leaf green (#b5d68c), purple (#553578), sky blue (#e4f2fc), and soft pink (#f8e6ef). The final visual layer is `client/src/styles/easycure-theme.css`.
 - Partner adverts: RESYIN Publications, https://resyinpublications.com/ (reader and writer slides)
 
 Business name, BN number, address, email, and phone are taken from the supplied CAC documents. The title Professor is supplied by the user. Personal residential information, date of birth, and tax identification number are not published.
 
 ## Assets still to swap
 
-The supplied logo has been regenerated with the corrected EASYCURE spelling and installed as the website logo, compact navigation emblem, favicon set, Apple touch icon, and PWA icons. The master and regeneration details are in `client/assets`. Inherited CEO, leadership, and community photographs referenced by the pages have been replaced with the EasyCure logo until EasyCure's own photographs are supplied. Original image files remain in the source folder, but the pages no longer reference them.
+The supplied logo has been regenerated with the corrected EASYCURE spelling and installed as the website logo, compact navigation emblem, favicon set, Apple touch icon, and PWA icons. The master and regeneration details are in `client/assets`. Clara's portrait uses the logo until her own photo is supplied. New AI-generated botanical, fictional community, and book imagery replaces generic logo placeholders elsewhere. Details and generation briefs are in `client/assets/easycure-visuals.md`. Database-managed images have not been changed.
 
 Inherited training sections, programme promises, mentorship references, and training enquiries have been removed from the homepage, other pages, support assistant, backend support answers, and policy copy. The former membership promotion now explains actual account features such as orders, receipts, profile management, and distributor applications. Database-managed stories and media have not been edited.
 

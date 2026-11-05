@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const promotions = [
-  { label: "PILLAR OF EASYCURE", title: "A haven for your everyday wellbeing.", text: "Explore wellness products, product guidance, and community support.", image: "/wellness.jpeg", to: "/collection", destination: "pillarofeasycure.com/collection", action: "Shop wellness products" },
-  { label: "GROW WITH EASYCURE", title: "Become an EasyCure Distributor", text: "Buy selected products at distributor prices and manage your own stock and customer orders.", image: "/wellness.jpeg", to: "/dashboard?distributor=apply", destination: "Apply in your EasyCure account", action: "Explore the opportunity" },
-  { label: "RESYIN PUBLICATIONS · FOR READERS", title: "Find your next great read.", text: "Visit the RESYIN Publications online bookstore and explore books for your reading journey.", image: "/logo.png", to: "https://resyinpublications.com/", destination: "resyinpublications.com", action: "Explore the bookstore" },
-  { label: "RESYIN PUBLICATIONS · FOR WRITERS", title: "Every writer has a story to share.", text: "Visit RESYIN Publications to connect with the team and enquire about your writing and publishing journey.", image: "/logo.png", to: "https://resyinpublications.com/", destination: "resyinpublications.com", action: "Connect with RESYIN" },
+  { label: "PILLAR OF EASYCURE", title: "A haven for your everyday wellbeing.", text: "Explore wellness products, product guidance, and community support.", image: "/images/easycure-wellness.jpg", to: "/collection", destination: "pillarofeasycure.com/collection", action: "Shop wellness products" },
+  { label: "GROW WITH EASYCURE", title: "Become an EasyCure Distributor", text: "Buy selected products at distributor prices and manage your own stock and customer orders.", image: "/images/easycure-community.jpg", to: "/dashboard?distributor=apply", destination: "Apply in your EasyCure account", action: "Explore the opportunity" },
+  { label: "RESYIN PUBLICATIONS · FOR READERS", title: "Find your next great read.", text: "Visit the RESYIN Publications online bookstore and explore books for your reading journey.", image: "/images/easycure-books.jpg", to: "https://resyinpublications.com/", destination: "resyinpublications.com", action: "Explore the bookstore" },
+  { label: "RESYIN PUBLICATIONS · FOR WRITERS", title: "Every writer has a story to share.", text: "Visit RESYIN Publications to connect with the team and enquire about your writing and publishing journey.", image: "/images/easycure-books.jpg", to: "https://resyinpublications.com/", destination: "resyinpublications.com", action: "Connect with RESYIN" },
 ];
 
 export default function ServicePromoCarousel() {

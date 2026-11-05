@@ -90,7 +90,7 @@ export default function Collection() {
             <h1>Natural solutions for a healthier, longer, vibrant life.</h1>
             <p>Explore herbal products, supplements, wellness devices, and everyday care essentials from PILLAR OF EASYCURE AND WELLNESS HAVEN.</p>
           </div>
-          <img src="/logo.png" alt="Pillar of EasyCure and Wellness Haven logo" />
+          <img src="/images/easycure-wellness.jpg" alt="Herbal tea, aloe and botanical ingredients" />
         </div>
       </section>
 
