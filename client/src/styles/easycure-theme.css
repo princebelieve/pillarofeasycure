@@ -42,6 +42,12 @@ body .easy-text-link { color: #4e3170; }
 .ec-image-note strong { font-size: 15px; margin-bottom: 4px; }
 .ec-image-note span { color: #586150; font-size: 12px; }
 .ec-visual-tag { position: absolute; right: 18px; top: 18px; padding: 10px 13px; background: #f7e4ef; color: #683958; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.ec-hero-carousel-controls { position: absolute; right: 24px; bottom: 34px; z-index: 2; display: flex; align-items: center; gap: 10px; padding: 7px 9px; border: 1px solid #ffffffb8; border-radius: 999px; background: #ffffffed; box-shadow: 0 6px 20px #26312824; }
+.ec-hero-carousel-controls > button { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid #dce6d2; border-radius: 50%; color: #4b6335; background: #fff; cursor: pointer; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.ec-hero-carousel-controls > button:hover { color: #fff; background: #553578; transform: scale(1.05); }
+.ec-hero-carousel-dots { display: flex; align-items: center; gap: 7px; }
+.ec-hero-carousel-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: #b9c8ad; cursor: pointer; transition: width .2s ease, background .2s ease; }
+.ec-hero-carousel-dots button.active { width: 20px; background: #553578; }
 .ec-care-strip { background: #dcebc6; border-top: 1px solid #d1e3b6; border-bottom: 1px solid #d1e3b6; }
 .ec-care-strip > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 20px; padding-bottom: 20px; }
 .ec-care-strip span { display: inline-flex; align-items: center; gap: 9px; color: #364f27; font-size: 13px; font-weight: 650; }
@@ -217,4 +223,5 @@ body .contact-strip .strip-card :is(strong,span,svg) { color: #3e3350; }
   .pwa-install-pill { left: 12px; right: 12px; bottom: 124px; max-width: none; }
   .pwa-install-pill-copy span { max-width: 47vw; }
 }
+@media (max-width: 600px) { .ec-hero-carousel-controls { right: 16px; bottom: 30px; gap: 7px; padding: 6px 7px; } .ec-hero-carousel-controls > button { width: 30px; height: 30px; } .ec-hero-carousel-dots { gap: 5px; } .ec-hero-carousel-dots button { width: 7px; height: 7px; } .ec-hero-carousel-dots button.active { width: 16px; } }
 @media (prefers-reduced-motion: reduce) { .ec-home *, .ec-home *::before, .ec-home *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

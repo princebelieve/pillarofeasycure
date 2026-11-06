@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HeartPulse, Sprout, Users, ArrowRight, Handshake, Truck } from "lucide-react";
+import { HeartPulse, Sprout, Users, ArrowLeft, ArrowRight, Handshake, Truck } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductGrid from "../components/ProductGrid";
@@ -31,13 +31,82 @@ const wellnessGallery = [
   { image: "/images/essential-oil-set.jpeg", title: "Essential oils and herbs", alt: "Eucalyptus, peppermint and rosemary essential oil bottles with fresh herbs" },
 ];
 
+const heroSlides = [
+  {
+    image: "/images/herbal-garden.jpeg",
+    alt: "A sunlit garden with labelled medicinal plants and aloe vera",
+    kicker: "PILLAR OF EASYCURE & WELLNESS HAVEN",
+    title: "A little care.",
+    emphasis: "A healthier YOU everyday.",
+    description: "Explore nature-inspired wellness products, thoughtful guidance, and support for everyday wellbeing.",
+    primary: "Explore the wellness shop",
+    primaryTo: "/collection",
+    secondary: "Get to know EasyCure",
+    secondaryTo: "/about",
+  },
+  {
+    image: "/images/hibiscus-herbal-ingredients.jpeg",
+    alt: "Hibiscus, citrus and botanical ingredients arranged outdoors",
+    kicker: "NATURAL WELLNESS, MADE PERSONAL",
+    title: "Make space for", emphasis: "everyday wellbeing.",
+    description: "Browse wellness essentials and learn about options that may fit your routine.",
+    primary: "Browse wellness products", primaryTo: "/collection",
+    secondary: "Contact our team", secondaryTo: "/contact",
+  },
+  {
+    image: "/images/ashwagandha-root.jpeg",
+    alt: "Ashwagandha roots growing beneath flowering plants",
+    kicker: "WELLNESS STARTS WITH KNOWLEDGE",
+    title: "Learn more.", emphasis: "Choose with care.",
+    description: "Explore product information and reach out when you need help with your questions.",
+    primary: "Meet our founder", primaryTo: "/our-director",
+    secondary: "Explore our story", secondaryTo: "/about",
+  },
+  {
+    image: "/images/wellness-treatment-room.jpeg",
+    alt: "A peaceful wellness treatment room surrounded by greenery",
+    kicker: "THOUGHTFUL SUPPORT FOR YOU",
+    title: "Your next step.", emphasis: "At your own pace.",
+    description: "Our team is here to help with product, order, delivery and general enquiries.",
+    primary: "Ask us a question", primaryTo: "/contact",
+    secondary: "Explore products", secondaryTo: "/collection",
+  },
+  {
+    image: "/images/essential-oil-set.jpeg",
+    alt: "Eucalyptus, peppermint and rosemary oils with fresh herbs",
+    kicker: "FIND YOUR EVERYDAY ESSENTIALS",
+    title: "Discover the collection.", emphasis: "Explore with care.",
+    description: "Take a look through the wellness shop and find details for the products you are interested in.",
+    primary: "Visit the wellness shop", primaryTo: "/collection",
+    secondary: "Get in touch", secondaryTo: "/contact",
+  },
+  {
+    image: "/images/cinchona-botanical-illustration.jpeg",
+    alt: "Botanical illustration of a flowering cinchona tree and bark",
+    kicker: "A WELLNESS JOURNEY BEGINS WITH A QUESTION",
+    title: "Knowledge and care.", emphasis: "Here for your journey.",
+    description: "Get to know Pillar of Easycure and Wellness Haven, our approach, and the support we offer.",
+    primary: "Learn about EasyCure", primaryTo: "/about",
+    secondary: "Contact our team", secondaryTo: "/contact",
+  },
+];
+
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
   const [products, setProducts] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+  const activeHeroSlide = heroSlides[activeHeroIndex];
+  const showHeroSlide = (index) => setActiveHeroIndex((index + heroSlides.length) % heroSlides.length);
   useScrollReveal();
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveHeroIndex((current) => (current + 1) % heroSlides.length);
+    }, 9000);
+    return () => window.clearInterval(timer);
+  }, [activeHeroIndex]);
 
   useEffect(() => {
     getProducts().then((data) => setProducts(Array.isArray(data) ? data.filter((p) => p.featured).slice(0, 4) : [])).catch(() => setProducts([]));
@@ -50,14 +119,25 @@ export default function Home() {
       <main className="ec-home">
         <section className="ec-hero">
           <div className="container ec-hero-grid">
-            <div className="ec-hero-copy">
-              <p className="ec-kicker"><Sprout size={16} /> PILLAR OF EASYCURE & WELLNESS HAVEN</p>
-              <h1>A little care.<br /><em>A healthier YOU everyday.</em></h1>
-              <p className="ec-hero-description">Make room for your wellbeing. Discover natural wellness products, thoughtful guidance, and a team ready to help you find your way.</p>
-              <div className="easy-actions"><Link className="easy-btn easy-btn-primary" to="/collection">Explore the wellness shop <ArrowRight size={18} /></Link><Link className="easy-btn easy-btn-light" to="/about">Get to know EasyCure</Link></div>
+            <div className="ec-hero-copy" key={activeHeroIndex}>
+              <p className="ec-kicker"><Sprout size={16} /> {activeHeroSlide.kicker}</p>
+              <h1>{activeHeroSlide.title}<br /><em>{activeHeroSlide.emphasis}</em></h1>
+              <p className="ec-hero-description">{activeHeroSlide.description}</p>
+              <div className="easy-actions"><Link className="easy-btn easy-btn-primary" to={activeHeroSlide.primaryTo}>{activeHeroSlide.primary} <ArrowRight size={18} /></Link><Link className="easy-btn easy-btn-light" to={activeHeroSlide.secondaryTo}>{activeHeroSlide.secondary}</Link></div>
               <div className="ec-hero-note"><Truck size={20} /><span><strong>Pay on delivery available</strong> ? Choose your payment option at checkout.</span></div>
             </div>
-            <div className="ec-hero-visual"><img src="/images/herbal-garden.jpeg" alt="A sunlit garden with labelled medicinal plants and aloe vera" fetchPriority="high" /><div className="ec-image-note"><Sprout size={24} /><div><strong>Rooted in nature.</strong><span>Made for your everyday.</span></div></div><span className="ec-visual-tag">YOUR WELLNESS HAVEN</span></div>
+            <div className="ec-hero-visual" role="group" aria-roledescription="carousel" aria-label="Wellness images">
+              <img key={activeHeroSlide.image} src={activeHeroSlide.image} alt={activeHeroSlide.alt} fetchPriority={activeHeroIndex === 0 ? "high" : "auto"} />
+              <div className="ec-image-note"><Sprout size={24} /><div><strong>Rooted in nature.</strong><span>Made for your everyday.</span></div></div>
+              <span className="ec-visual-tag">YOUR WELLNESS HAVEN</span>
+              <div className="ec-hero-carousel-controls" role="group" aria-label="Hero carousel controls">
+                <button type="button" onClick={() => showHeroSlide(activeHeroIndex - 1)} aria-label="Previous hero image"><ArrowLeft size={17} /></button>
+                <div className="ec-hero-carousel-dots" role="group" aria-label="Choose a hero image">
+                  {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroIndex ? "active" : ""} onClick={() => showHeroSlide(index)} aria-label={`Show hero image ${index + 1}`} aria-pressed={index === activeHeroIndex} />)}
+                </div>
+                <button type="button" onClick={() => showHeroSlide(activeHeroIndex + 1)} aria-label="Next hero image"><ArrowRight size={17} /></button>
+              </div>
+            </div>
           </div>
         </section>
         <div className="ec-care-strip"><div className="container"><span><Sprout size={18} /> Natural wellness products</span><span><HeartPulse size={18} /> Thoughtful customer support</span><span><Truck size={18} /> Delivery & pickup options</span></div></div>
