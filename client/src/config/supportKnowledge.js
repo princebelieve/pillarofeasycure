@@ -3,11 +3,12 @@ const supportKnowledge = [
     slug: "about-easy-life",
     title: "About PILLAR OF EASYCURE AND WELLNESS HAVEN",
     url: "/about",
-    summary: "PILLAR OF EASYCURE AND WELLNESS HAVEN provides wellness products, product guidance, and community support for healthier everyday living.",
+    summary: "Founded by Professor Clara Obehi Egonmwa, Pillar of Easycare and Wellness Haven promotes responsible natural wellness, education and compassionate support.",
     keywords: ["about", "company", "vision", "mission", "easycure", "wellness hub", "who are you"],
     details: [
-      "Our vision is to help people build healthier habits and stronger communities through responsible product use and customer support.",
-      "Our mission includes quality products, wellness equipment, responsible product use, and customer support.",
+      "Our vision is to become a trusted natural wellness destination that inspires healthier communities through nature, responsible complementary practices, education and compassionate care.",
+      "Our mission includes natural wellness, practical health education, personalised care, complementary practices that may complement conventional care, community impact, and quality with integrity.",
+      "The founder, Professor Clara Obehi Egonmwa, is a Professor of Agricultural Extension and Rural Development, a trained and certified Quantum Analysis practitioner, and holds a Diploma in Complementary and Alternative Medicine.",
     ],
   },
   {
