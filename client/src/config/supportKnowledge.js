@@ -1,14 +1,14 @@
 const supportKnowledge = [
   {
-    slug: "about-easy-life",
+    slug: "about-easycure",
     title: "About PILLAR OF EASYCURE AND WELLNESS HAVEN",
     url: "/about",
-    summary: "Founded by Professor Clara Obehi Egonmwa, Pillar of Easycare and Wellness Haven promotes responsible natural wellness, education and compassionate support.",
+    summary: "Founded by Professor Clara Obehi Egonmwan, Pillar of Easycare and Wellness Haven promotes responsible natural wellness, education and compassionate support.",
     keywords: ["about", "company", "vision", "mission", "easycure", "wellness hub", "who are you"],
     details: [
       "Our vision is to become a trusted natural wellness destination that inspires healthier communities through nature, responsible complementary practices, education and compassionate care.",
       "Our mission includes natural wellness, practical health education, personalised care, complementary practices that may complement conventional care, community impact, and quality with integrity.",
-      "The founder, Professor Clara Obehi Egonmwa, is a Professor of Agricultural Extension and Rural Development, a trained and certified Quantum Analysis practitioner, and holds a Diploma in Complementary and Alternative Medicine.",
+      "The founder, Professor Clara Obehi Egonmwan, is a Professor of Agricultural Extension and Rural Development, a trained and certified Quantum Analysis practitioner, and holds a Diploma in Complementary and Alternative Medicine.",
     ],
   },
   {
@@ -129,7 +129,7 @@ const supportKnowledge = [
     summary: "Contact EASYCURE about wellness products, accounts, orders, partnerships, delivery, or order support.",
     keywords: ["contact", "support", "help", "whatsapp", "phone", "email", "call", "enquiry"],
     details: [
-      "WhatsApp and phone support: 08029778813.",
+      "Call EASYCURE at +2348117240100. WhatsApp support: +2348029778813.",
       "Email support: pillarofeasycure@gmail.com.",
       "Use the Contact page to submit your name, email, phone number, area of interest, and message.",
     ],

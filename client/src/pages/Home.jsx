@@ -18,6 +18,19 @@ const pillars = [
   { icon: ArrowRight, title: "Community Outreach", text: "Learn, serve, and create meaningful community impact." },
 ];
 
+const wellnessGallery = [
+  { image: "/images/herbal-garden.jpeg", title: "A garden of wellness plants", alt: "A sunlit garden with labelled medicinal plants and aloe vera" },
+  { image: "/images/hibiscus-herbal-ingredients.jpeg", title: "Botanicals in everyday life", alt: "Hibiscus, citrus and botanical ingredients arranged outdoors" },
+  { image: "/images/ashwagandha-root.jpeg", title: "Rooted in nature", alt: "Ashwagandha roots growing beneath flowering plants" },
+  { image: "/images/cinchona-botanical-illustration.jpeg", title: "Botanical field notes", alt: "Botanical illustration of a flowering cinchona tree and bark" },
+  { image: "/images/st-johns-wort-flowers.jpeg", title: "Flowers in the garden", alt: "Yellow St John’s wort flowers growing among green leaves" },
+  { image: "/images/grapefruit.jpeg", title: "Fresh citrus", alt: "Whole and sliced grapefruit" },
+  { image: "/images/garlic.jpeg", title: "Everyday ingredients", alt: "Fresh garlic bulbs" },
+  { image: "/images/ginkgo-leaves.jpeg", title: "A closer look at leaves", alt: "Green ginkgo leaves in soft natural light" },
+  { image: "/images/wellness-treatment-room.jpeg", title: "A calm place to care for yourself", alt: "A peaceful wellness treatment room surrounded by greenery" },
+  { image: "/images/essential-oil-set.jpeg", title: "Essential oils and herbs", alt: "Eucalyptus, peppermint and rosemary essential oil bottles with fresh herbs" },
+];
+
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
@@ -34,24 +47,26 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="easy-life-home ec-home">
+      <main className="ec-home">
         <section className="ec-hero">
           <div className="container ec-hero-grid">
             <div className="ec-hero-copy">
               <p className="ec-kicker"><Sprout size={16} /> PILLAR OF EASYCURE & WELLNESS HAVEN</p>
-              <h1>A little care.<br /><em>A healthier everyday.</em></h1>
+              <h1>A little care.<br /><em>A healthier YOU everyday.</em></h1>
               <p className="ec-hero-description">Make room for your wellbeing. Discover natural wellness products, thoughtful guidance, and a team ready to help you find your way.</p>
               <div className="easy-actions"><Link className="easy-btn easy-btn-primary" to="/collection">Explore the wellness shop <ArrowRight size={18} /></Link><Link className="easy-btn easy-btn-light" to="/about">Get to know EasyCure</Link></div>
               <div className="ec-hero-note"><Truck size={20} /><span><strong>Pay on delivery available</strong> ? Choose your payment option at checkout.</span></div>
             </div>
-            <div className="ec-hero-visual"><img src="/images/easycure-wellness.jpg" alt="Herbal tea, aloe, and botanical ingredients in a bright wellness setting" fetchPriority="high" /><div className="ec-image-note"><Sprout size={24} /><div><strong>Rooted in nature.</strong><span>Made for your everyday.</span></div></div><span className="ec-visual-tag">YOUR WELLNESS HAVEN</span></div>
+            <div className="ec-hero-visual"><img src="/images/herbal-garden.jpeg" alt="A sunlit garden with labelled medicinal plants and aloe vera" fetchPriority="high" /><div className="ec-image-note"><Sprout size={24} /><div><strong>Rooted in nature.</strong><span>Made for your everyday.</span></div></div><span className="ec-visual-tag">YOUR WELLNESS HAVEN</span></div>
           </div>
         </section>
         <div className="ec-care-strip"><div className="container"><span><Sprout size={18} /> Natural wellness products</span><span><HeartPulse size={18} /> Thoughtful customer support</span><span><Truck size={18} /> Delivery & pickup options</span></div></div>
 
         <ServicePromoCarousel />
 
-        <section className="director-home-feature"><div className="container director-home-feature-grid"><div className="director-home-portrait"><span>MEET OUR FOUNDER</span><img src="/images/founder-clara-egonmwa-portrait.jpg" alt="Portrait of Professor Clara Obehi Egonmwa" /></div><div className="director-home-copy"><p className="easy-eyebrow">LEADERSHIP WITH HEART</p><h2>Meet Professor Clara Obehi Egonmwa.</h2><p>A Professor of Agricultural Extension and Rural Development, Clara brings academic knowledge, natural health education and over a decade of practical wellness experience to Pillar of Easycare and Wellness Haven.</p><Link to="/our-director" className="easy-btn easy-btn-primary">Read the founder’s message <ArrowRight size={18} /></Link></div></div></section>
+        <section className="ec-wellness-gallery section reveal" aria-labelledby="ec-gallery-title"><div className="container"><div className="easy-section-heading easy-heading-row"><div><p className="easy-eyebrow">INSPIRED BY NATURE</p><h2 id="ec-gallery-title">Explore the world of natural wellness.</h2><p>Discover botanical ingredients, wellness spaces and learning resources that inspire a thoughtful approach to everyday wellbeing.</p></div><div className="ec-gallery-controls"><button type="button" aria-label="Scroll wellness gallery left" onClick={() => document.getElementById("ec-gallery-track")?.scrollBy({ left: -320, behavior: "smooth" })}>‹</button><button type="button" aria-label="Scroll wellness gallery right" onClick={() => document.getElementById("ec-gallery-track")?.scrollBy({ left: 320, behavior: "smooth" })}>›</button></div></div><div className="ec-gallery-track" id="ec-gallery-track" tabIndex="0" aria-label="Wellness inspiration images">{wellnessGallery.map((item, index) => <article className="ec-gallery-card content-card" key={item.image} style={{ "--gallery-index": index }}><img src={item.image} alt={item.alt} loading="lazy" /><div><span>WELLNESS INSPIRATION</span><h3>{item.title}</h3></div></article>)}</div></div></section>
+
+        <section className="director-home-feature"><div className="container director-home-feature-grid"><div className="director-home-portrait"><span>MEET OUR FOUNDER</span><img src="/images/founder-clara-egonmwan-portrait.jpg" alt="Portrait of Professor Clara Obehi Egonmwan" /></div><div className="ec-founder-copy"><div className="director-home-copy"><p className="easy-eyebrow">LEADERSHIP WITH HEART</p><h2>Meet Professor Clara Obehi Egonmwan.</h2><p>A Professor of Agricultural Extension and Rural Development, Clara brings academic knowledge, natural health education and over a decade of practical wellness experience to Pillar of Easycare and Wellness Haven.</p><Link to="/our-director" className="easy-btn easy-btn-primary">Read the founder’s message <ArrowRight size={18} /></Link></div><img className="ec-founder-environment" src="/images/wellness-treatment-room.jpeg" alt="A calm wellness treatment room surrounded by greenery" loading="lazy" /></div></div></section>
 
         <section className="easy-intro section reveal">
           <div className="container easy-intro-grid">

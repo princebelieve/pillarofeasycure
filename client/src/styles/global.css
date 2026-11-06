@@ -5468,8 +5468,8 @@ iframe {
   box-shadow: 0 6px 16px rgba(31, 53, 86, 0.2);
 }
 
-/* EASYLIFE WELLNESS HUB */
-.easy-life-home { color: #050805; background: #edf5fa; }
+/* EASYCURE HOME PAGE */
+.ec-home { color: #050805; background: #edf5fa; }
 .easy-hero { background: radial-gradient(circle at 85% 20%, #398352 0, transparent 27%), linear-gradient(125deg, #050805, #243b35 58%, #075c32); color: #fff; padding: 104px 0 90px; overflow: hidden; position: relative; }
 .easy-hero:after { content: ""; position: absolute; inset: auto -10% -70px; height: 140px; background: #edf5fa; border-radius: 50% 50% 0 0; opacity: .9; }
 .easy-hero-grid, .easy-intro-grid, .easy-membership-grid, .easy-two-column, .easy-training { display: grid; grid-template-columns: 1.5fr 0.8fr; gap: 54px; align-items: center; }
@@ -5500,7 +5500,7 @@ iframe {
 .easy-marquee-track i { font-style: normal; color: #fff; }
 .easy-intro { border-bottom: 1px solid #d4a72c; background: #fff; }
 .easy-intro-grid { grid-template-columns: .5fr 1.5fr; }
-.easy-life-home h2 { font-size: clamp(2rem, 3.5vw, 3.3rem); line-height: 1.1; margin: 0 0 16px; color: #103b22; }
+.ec-home h2 { font-size: clamp(2rem, 3.5vw, 3.3rem); line-height: 1.1; margin: 0 0 16px; color: #103b22; }
 .easy-intro p:last-child, .easy-two-column p, .easy-training p { color: #52675b; font-size: 1.04rem; line-height: 1.8; }
 .easy-section-heading { max-width: 710px; margin-bottom: 32px; }
 .easy-products-intro { max-width: 650px; margin: 0; color: #52675b; font-size: 1rem; line-height: 1.65; }
@@ -5531,11 +5531,11 @@ iframe {
 @keyframes easyHeroIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .easy-hero-content { animation: easyHeroIn .8s ease both; }.easy-hero-card { animation: easyHeroIn .8s .18s ease both; }
 
-/* EASYLIFE footer palette and existing motion utilities on the new home. */
+/* EASYCURE footer palette and home motion utilities. */
 .footer { background: linear-gradient(135deg, #062919, #0d4827); border-top: 3px solid #c99f3f; }
 .footer-bottom { border-top: 1px solid rgba(226, 180, 77, .25); padding-top: 22px; }
 
-/* ================= EASYLIFE SITE-WIDE BRAND LAYER ================= */
+/* ================= EASYCURE SITE-WIDE BRAND LAYER ================= */
 
 body {
   background: var(--cream);
@@ -5803,19 +5803,19 @@ textarea:focus {
   color: var(--gold);
 }
 
-.easy-life-home .easy-pillar,
-.easy-life-home .easy-service-list > div,
-.easy-life-home .easy-member-card,
-.easy-life-home .easy-outreach-mark {
+.ec-home .easy-pillar,
+.ec-home .easy-service-list > div,
+.ec-home .easy-member-card,
+.ec-home .easy-outreach-mark {
   animation: easyHeroIn .7s ease both;
 }
 
-.easy-life-home .easy-pillar:nth-child(2),
-.easy-life-home .easy-service-list > div:nth-child(2) { animation-delay: .08s; }
-.easy-life-home .easy-pillar:nth-child(3),
-.easy-life-home .easy-service-list > div:nth-child(3) { animation-delay: .16s; }
-.easy-life-home .easy-pillar:nth-child(4) { animation-delay: .24s; }
-.easy-life-home .easy-pillar:nth-child(5) { animation-delay: .32s; }
+.ec-home .easy-pillar:nth-child(2),
+.ec-home .easy-service-list > div:nth-child(2) { animation-delay: .08s; }
+.ec-home .easy-pillar:nth-child(3),
+.ec-home .easy-service-list > div:nth-child(3) { animation-delay: .16s; }
+.ec-home .easy-pillar:nth-child(4) { animation-delay: .24s; }
+.ec-home .easy-pillar:nth-child(5) { animation-delay: .32s; }
 
 .footer {
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
@@ -5939,8 +5939,8 @@ button:hover,
   box-shadow: 0 18px 34px rgba(21, 148, 71, .34), 0 0 0 2px rgba(232, 198, 106, .4) !important;
 }
 
-.easy-life-home .easy-btn,
-.easy-life-home button,
+.ec-home .easy-btn,
+.ec-home button,
 .card-actions button,
 .support-assistant button,
 .contact-strip .strip-card {
@@ -5948,8 +5948,8 @@ button:hover,
   will-change: filter, box-shadow;
 }
 
-.easy-life-home .easy-btn:hover,
-.easy-life-home button:hover,
+.ec-home .easy-btn:hover,
+.ec-home button:hover,
 .card-actions button:hover,
 .support-assistant button:hover,
 .contact-strip .strip-card:hover {
@@ -5985,8 +5985,8 @@ button:hover,
     animation: none !important;
   }
 
-  .easy-life-home .easy-btn,
-  .easy-life-home button,
+  .ec-home .easy-btn,
+  .ec-home button,
   .card-actions button,
   .support-assistant button,
   .contact-strip .strip-card {
@@ -6456,14 +6456,14 @@ button:hover,
   .form { max-width: none; margin-right: 0; margin-left: 0; padding: 20px 16px; border-radius: 12px; }
   .about-story .story-card { padding: 22px 16px; }
 }
-.easy-life-home .easy-products .product-card,
-.easy-life-home .easy-service-list > div,
-.easy-life-home .easy-member-card,
-.easy-life-home .easy-outreach-mark { transition: transform .35s ease, box-shadow .35s ease; }
-.easy-life-home .easy-products .product-card:hover,
-.easy-life-home .easy-service-list > div:hover,
-.easy-life-home .easy-member-card:hover,
-.easy-life-home .easy-outreach-mark:hover { transform: translateY(-8px); box-shadow: 0 18px 50px rgba(0, 0, 0, .18); }
+.ec-home .easy-products .product-card,
+.ec-home .easy-service-list > div,
+.ec-home .easy-member-card,
+.ec-home .easy-outreach-mark { transition: transform .35s ease, box-shadow .35s ease; }
+.ec-home .easy-products .product-card:hover,
+.ec-home .easy-service-list > div:hover,
+.ec-home .easy-member-card:hover,
+.ec-home .easy-outreach-mark:hover { transform: translateY(-8px); box-shadow: 0 18px 50px rgba(0, 0, 0, .18); }
 @media (max-width: 1100px) { .easy-pillar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 800px) { .easy-hero { padding: 72px 0; }.easy-hero-grid, .easy-intro-grid, .easy-membership-grid, .easy-two-column, .easy-training, .easy-three-column { grid-template-columns: 1fr; gap: 30px; }.easy-pillar-grid { grid-template-columns: 1fr 1fr; }.easy-training { padding: 28px; }.easy-heading-row { align-items: start; flex-direction: column; }.easy-hero-card { max-width: 350px; }.easy-section-image { max-width: 100%; } }
 @media (max-width: 480px) { .easy-pillar-grid { grid-template-columns: 1fr; }.easy-hero h1 { font-size: 2.7rem; }.easy-btn { width: 100%; }.easy-hero-card { padding: 25px; } }

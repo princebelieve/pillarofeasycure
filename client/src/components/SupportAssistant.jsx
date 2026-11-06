@@ -18,7 +18,7 @@ const intentRules = [
   },
   {
     test: /\b(who are you|what is easycure|tell me about easycure|what do you do)\b/i,
-    entry: "about-easy-life",
+    entry: "about-easycure",
   },
   {
     test: /\b(join|sign up|signup|register|become a member|membership)\b/i,
