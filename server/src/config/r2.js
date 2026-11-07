@@ -2,6 +2,7 @@
 const {
   S3Client,
   PutObjectCommand,
+  GetObjectCommand,
   DeleteObjectCommand,
 } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
@@ -44,6 +45,25 @@ async function uploadBufferToR2(buffer, { fileName = "upload", contentType = "ap
     CacheControl: "public, max-age=31536000, immutable",
   }));
   return `${process.env.R2_PUBLIC_BASE_URL.replace(/\/$/, "")}/${key}`;
+}
+
+function createSourceR2Client() {
+  const { EASYLIFE_SOURCE_R2_ENDPOINT, EASYLIFE_SOURCE_R2_ACCESS_KEY, EASYLIFE_SOURCE_R2_SECRET_KEY } = process.env;
+  if (!EASYLIFE_SOURCE_R2_ENDPOINT || !EASYLIFE_SOURCE_R2_ACCESS_KEY || !EASYLIFE_SOURCE_R2_SECRET_KEY || !process.env.EASYLIFE_SOURCE_R2_BUCKET) {
+    throw new Error("Configure the EasyLife source R2 endpoint, access key, secret key, and bucket on the server.");
+  }
+  return new S3Client({
+    region: "auto",
+    endpoint: EASYLIFE_SOURCE_R2_ENDPOINT,
+    credentials: { accessKeyId: EASYLIFE_SOURCE_R2_ACCESS_KEY, secretAccessKey: EASYLIFE_SOURCE_R2_SECRET_KEY },
+  });
+}
+
+async function readSourceR2Object(sourceS3, key) {
+  const result = await sourceS3.send(new GetObjectCommand({ Bucket: process.env.EASYLIFE_SOURCE_R2_BUCKET, Key: key }));
+  const chunks = [];
+  for await (const chunk of result.Body) chunks.push(Buffer.from(chunk));
+  return { buffer: Buffer.concat(chunks), contentType: result.ContentType || "application/octet-stream" };
 }
 
 function safeFileName(fileName = "upload") {
@@ -100,4 +120,4 @@ async function deleteFromR2(fileUrl) {
   return true;
 }
 
-module.exports = { uploadToR2, uploadBufferToR2, createPresignedContentUpload, deleteFromR2 };
+module.exports = { uploadToR2, uploadBufferToR2, createSourceR2Client, readSourceR2Object, createPresignedContentUpload, deleteFromR2 };
