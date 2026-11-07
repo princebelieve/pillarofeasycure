@@ -9,8 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src="/logo.png" alt="PILLAR OF EASYCURE AND WELLNESS HAVEN" className="footer-logo" />
-          <h3>PILLAR OF EASYCURE AND WELLNESS HAVEN</h3>
+          <img src="/images/contact-hero-brand-mark.jpeg" alt="Pillar of EasyCure and Wellness Haven logo and full brand name" className="footer-logo" />
           <p>Nature Cares & Healthy Living.</p>
           <p className="footer-address">13, Uwumarongie Street, GRA, Benin City, Edo State, Nigeria</p>
         </div>

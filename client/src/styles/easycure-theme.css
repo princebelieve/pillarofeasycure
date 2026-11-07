@@ -109,6 +109,7 @@ body .footer .footer-links a, body .footer .footer-contact > a { color: #50405f;
 body .footer :is(.footer-social a, .footer-links a:hover, .footer-contact > a:hover) { color: #644586; }
 body .footer-bottom, body .footer-legal { border-color: #dacde4; }
 body .footer .footer-brand p { color: #4c3d5d !important; }
+body .footer .footer-brand .footer-logo { display: block; width: min(100%, 240px); height: auto; margin: 0 0 16px; border-radius: 12px; background: #fff; }
 body .footer .footer-bottom { color: #5f536c; }
 .about-hero, .director-hero, .outreach-hero, .journey-hero { background: linear-gradient(115deg, #edf5df, #e9f3fb); color: #314a29; }
 body :is(.about-hero,.director-hero,.outreach-hero,.journey-hero) :is(h1,h2,p,.director-role,.director-intro) { color: #34482b; }
