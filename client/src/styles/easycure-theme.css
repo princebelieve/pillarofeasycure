@@ -137,6 +137,8 @@ body .contact-hero h1 { text-shadow: none; }
 body .contact-hero :is(h1,p,.eyebrow) { color: #344a28; }
 body .contact-strip .strip-card { background: #fff; color: #3e3350; border-color: #dbe5d0; }
 body .contact-strip .strip-card :is(strong,span,svg) { color: #3e3350; }
+body .contact-strip .contact-number { display: block; color: #3e3350; font-size: 13px; line-height: 1.5; text-decoration: none; }
+body .contact-strip .contact-number:hover { text-decoration: underline; text-underline-offset: 2px; }
 .pwa-notification-banner { inset: auto auto 22px 22px; width: min(420px, calc(100vw - 44px)); box-sizing: border-box; background: #e7f3fc; color: #34475d; border: 1px solid #bed8ea; border-radius: 18px; padding: 16px; box-shadow: 0 10px 32px #26364c16; }
 .pwa-notification-banner :is(strong,p,.pwa-banner-icon,.pwa-btn-dismiss) { color: #34475d; }
 .pwa-notification-banner .pwa-btn-enable { background: #553578; color: #fff; border: 0; }
