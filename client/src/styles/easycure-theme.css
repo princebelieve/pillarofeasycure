@@ -158,13 +158,49 @@ body .contact-strip .contact-number:hover { text-decoration: underline; text-und
 .contact-hero { margin: 0 auto 42px; text-align: center; }
 .contact-hero-card { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
 .contact-hero-card::before { display: none !important; }
-.contact-hero-card > img { display: block; width: 100%; height: min(66vw, 720px); min-height: 320px; object-fit: contain; object-position: center; animation: contactBrandReveal 1s cubic-bezier(.2,.7,.2,1) both; }
+.contact-hero-card > img { display: block; width: 100%; height: min(66vw, calc(100svh - 140px), 700px); min-height: 0; object-fit: contain; object-position: center; animation: contactBrandReveal 1s cubic-bezier(.2,.7,.2,1) both; }
 .contact-intro { max-width: 920px; margin: 0 auto 42px; }
 .contact-intro h1 { margin: 12px 0; color: #304b24; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.08; letter-spacing: -.04em; }
 .contact-intro > p { color: #536051; font-size: 1.1rem; line-height: 1.7; }
 .contact-body-grid { margin-top: 0; }
 @keyframes contactBrandReveal { from { opacity: 0; transform: scale(.975); } to { opacity: 1; transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) { .contact-hero-card > img { animation: none; } }
+
+@media (min-width: 901px) {
+  body .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    background: linear-gradient(112deg, #102c21 0%, #1d4432 38%, #294d39 52%, #153827 100%);
+    border-bottom: 1px solid #91ae71;
+    box-shadow: 0 8px 28px #10281e38, inset 0 1px #ffffff14;
+    backdrop-filter: blur(14px);
+  }
+  body .navbar .navbar-brand { gap: 12px; }
+  body .navbar .navbar-brand .logo {
+    width: 48px;
+    height: 48px;
+    padding: 3px;
+    border: 1px solid #d9e7c8;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 10px #061a1150;
+  }
+  body .navbar :is(.brand-name, .nav-links a, .nav-links button) { color: #f4f3e8; }
+  body .navbar .brand-name span:last-child { color: #c7deb2; }
+  body .navbar .nav-links :is(a, button):hover,
+  body .navbar .nav-links :is(a, button):focus-visible { color: #d6e9b7; }
+  body .navbar .nav-dropdown-menu { background: #fdfdf9; border-color: #c6d5b7; box-shadow: 0 16px 40px #071b123d; }
+  body .navbar .nav-dropdown-menu :is(a, button) { color: #263c2e; }
+  body .navbar .nav-dropdown-menu :is(a, button):hover { color: #355725; background: #edf4e5; }
+  body .navbar :is(.notification-bell, .cart-nav-button, .products-nav-button) { color: #f4f3e8; }
+  body .navbar .notification-bell:hover { color: #d6e9b7; background: #ffffff18; }
+  body .navbar .products-nav-button,
+  body .navbar .cart-nav-button { border-color: #a9c38f; background: #ffffff0c; }
+  body .navbar .products-nav-button:hover,
+  body .navbar .cart-nav-button:hover { border-color: #d6e9b7; background: #ffffff1c; }
+  body .navbar .cart-nav-count { border-color: #1d4432; background: #d5e8b8; color: #203b2b; }
+}
 
 /* EASYCURE home motion: keep the entrance, hover and carousel polish while
    respecting the visitor's reduced-motion preference below. */
