@@ -34,6 +34,7 @@ body .easy-text-link { color: #4e3170; }
 .ec-hero h1 em { color: #624284; font-family: Georgia, serif; font-weight: 400; }
 .ec-hero-description { max-width: 540px; color: #4c5b4a; font-size: 18px; line-height: 1.8; margin: 0 0 29px; }
 .ec-hero .easy-btn { font-size: 14px; padding: 15px 22px; }
+.ec-hero-visual > img.ec-hero-poster { object-fit: contain; border-radius: 24px; background: #fff; box-shadow: 0 14px 34px #26312818; }
 .ec-hero-note { margin-top: 26px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: #4b5e40; line-height: 1.6; }
 .ec-hero-note svg { flex-shrink: 0; }
 .ec-hero-visual { position: relative; padding: 0 0 24px 15px; }
@@ -151,6 +152,19 @@ body .contact-strip .contact-number:hover { text-decoration: underline; text-und
 .support-assistant-header { background: #f0eaf6; color: #4b3563; }
 .privacy-consent-banner { background: #fff; color: #34422e; border: 1px solid #d9e4ce; }
 .privacy-consent-banner :is(strong,p,a) { color: #34422e; }
+
+/* The contact hero is the supplied brand artwork; its copy lives in the page body. */
+.contact-page { padding-top: 24px; }
+.contact-hero { margin: 0 auto 42px; text-align: center; }
+.contact-hero-card { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+.contact-hero-card::before { display: none !important; }
+.contact-hero-card > img { display: block; width: 100%; height: min(66vw, 720px); min-height: 320px; object-fit: contain; object-position: center; animation: contactBrandReveal 1s cubic-bezier(.2,.7,.2,1) both; }
+.contact-intro { max-width: 920px; margin: 0 auto 42px; }
+.contact-intro h1 { margin: 12px 0; color: #304b24; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.08; letter-spacing: -.04em; }
+.contact-intro > p { color: #536051; font-size: 1.1rem; line-height: 1.7; }
+.contact-body-grid { margin-top: 0; }
+@keyframes contactBrandReveal { from { opacity: 0; transform: scale(.975); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .contact-hero-card > img { animation: none; } }
 
 /* EASYCURE home motion: keep the entrance, hover and carousel polish while
    respecting the visitor's reduced-motion preference below. */

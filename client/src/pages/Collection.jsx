@@ -97,7 +97,7 @@ export default function Collection() {
       <section className="section-alt">
         <div className="container">
           <div>
-            <h1 className="title">Wellness Shop</h1>
+            <h2 className="title">Wellness Shop</h2>
             <p className="collection-shop-instruction">Search for a product or choose one below. Click the View Product button for more details.</p>
 
             <div className="product-search" role="search">

@@ -33,6 +33,19 @@ const wellnessGallery = [
 
 const heroSlides = [
   {
+    image: "/images/home-hero-wellness-community.jpeg",
+    alt: "Pillar of EasyCure banner: Where Nature Meets Wellness, and Caring Becomes a Lifestyle",
+    kicker: "PILLAR OF EASYCURE & WELLNESS HAVEN",
+    title: "Where nature meets wellness,",
+    emphasis: "care becomes a lifestyle.",
+    description: "Explore wellness products, thoughtful guidance, and compassionate support for healthier everyday living.",
+    primary: "Explore the wellness shop",
+    primaryTo: "/collection",
+    secondary: "Contact our team",
+    secondaryTo: "/contact",
+    poster: true,
+  },
+  {
     image: "/images/herbal-garden.jpeg",
     alt: "A sunlit garden with labelled medicinal plants and aloe vera",
     kicker: "PILLAR OF EASYCURE & WELLNESS HAVEN",
@@ -127,7 +140,7 @@ export default function Home() {
               <div className="ec-hero-note"><Truck size={20} /><span><strong>Pay on delivery available</strong> ? Choose your payment option at checkout.</span></div>
             </div>
             <div className="ec-hero-visual" role="group" aria-roledescription="carousel" aria-label="Wellness images">
-              <img key={activeHeroSlide.image} src={activeHeroSlide.image} alt={activeHeroSlide.alt} fetchPriority={activeHeroIndex === 0 ? "high" : "auto"} />
+              <img className={activeHeroSlide.poster ? "ec-hero-poster" : ""} key={activeHeroSlide.image} src={activeHeroSlide.image} alt={activeHeroSlide.alt} fetchPriority={activeHeroIndex === 0 ? "high" : "auto"} />
               <div className="ec-image-note"><Sprout size={24} /><div><strong>Rooted in nature.</strong><span>Made for your everyday.</span></div></div>
               <span className="ec-visual-tag">YOUR WELLNESS HAVEN</span>
               <div className="ec-hero-carousel-controls" role="group" aria-label="Hero carousel controls">

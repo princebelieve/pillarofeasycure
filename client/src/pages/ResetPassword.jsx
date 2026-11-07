@@ -45,7 +45,7 @@ export default function ResetPassword() {
       <Navbar />
 
       <div className="form" style={{ marginTop: 50 }}>
-        <h2>Reset Password</h2>
+        <h1>Reset Password</h1>
 
         <p className="muted" style={{ marginBottom: 20 }}>
           Enter your new password below.
