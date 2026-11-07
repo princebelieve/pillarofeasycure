@@ -5,7 +5,7 @@ import useScrollReveal from "../hooks/useScrollReveal";
 import { ArrowRight, HeartHandshake, Users } from "lucide-react";
 
 const activities = [
-  { title: "Community wellness education", text: "Professor Clara and the Easycare team share natural wellness information and practical guidance with community members.", image: "/images/founder-community-wellness-session.jpg", alt: "Professor Clara speaking with a community member at a wellness education session" },
+  { title: "Community wellness education", text: "Professor Clara and the EasyCure team share natural wellness information and practical guidance with community members.", image: "/images/founder-community-wellness-session.jpg", alt: "Professor Clara speaking with a community member at a wellness education session" },
   { title: "Individual wellness consultations", text: "The supplied photos show Professor Clara meeting with individuals and explaining wellness information in a one-to-one setting.", image: "/images/founder-wellness-consultation.jpg", alt: "Professor Clara discussing wellness information with a visitor" },
   { title: "Community engagement", text: "In community settings, the team makes time for conversation, listening and sharing wellness knowledge with local residents.", image: "/images/community-wellness-outreach.jpg", alt: "Community members gathered at a wellness outreach event" },
 ];

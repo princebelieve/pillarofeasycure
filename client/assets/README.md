@@ -2,7 +2,7 @@
 
 `logo.jpeg` is the uploaded reference, preserved unchanged. `easycure-logo-master.png` is the corrected high-resolution master generated with the built-in imagegen tool.
 
-Generation prompt: Regenerate the supplied logo faithfully, preserving the dark forest-green classical pillar, gold caduceus, cupped hands, leaf with gold veins, white background, and centered composition. Correct EASYCARE to EASYCURE. Render exactly two lines: “PILLAR OF EASYCURE AND” and “WELLNESS HAVEN”. Keep crisp graphic edges and no additional text or decoration.
+Generation prompt: Regenerate the supplied logo faithfully, preserving the dark forest-green classical pillar, gold caduceus, cupped hands, leaf with gold veins, white background, and centered composition. Use the correct brand spelling throughout. Render exactly two lines: “PILLAR OF EASYCURE AND” and “WELLNESS HAVEN”. Keep crisp graphic edges and no additional text or decoration.
 
 `generate-brand-assets.ps1` resizes the master with System.Drawing and produces the public files used by the application:
 

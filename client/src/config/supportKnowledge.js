@@ -3,7 +3,7 @@ const supportKnowledge = [
     slug: "about-easycure",
     title: "About PILLAR OF EASYCURE AND WELLNESS HAVEN",
     url: "/about",
-    summary: "Founded by Professor Clara Obehi Egonmwan, Pillar of Easycare and Wellness Haven promotes responsible natural wellness, education and compassionate support.",
+    summary: "Founded by Professor Clara Obehi Egonmwan, Pillar of EasyCure and Wellness Haven promotes responsible natural wellness, education and compassionate support.",
     keywords: ["about", "company", "vision", "mission", "easycure", "wellness hub", "who are you"],
     details: [
       "Our vision is to become a trusted natural wellness destination that inspires healthier communities through nature, responsible complementary practices, education and compassionate care.",
