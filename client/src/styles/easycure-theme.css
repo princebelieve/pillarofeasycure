@@ -279,3 +279,11 @@ body .contact-strip .contact-number:hover { text-decoration: underline; text-und
 }
 @media (max-width: 600px) { .ec-hero-carousel-controls { right: 16px; bottom: 30px; gap: 7px; padding: 6px 7px; } .ec-hero-carousel-controls > button { width: 30px; height: 30px; } .ec-hero-carousel-dots { gap: 5px; } .ec-hero-carousel-dots button { width: 7px; height: 7px; } .ec-hero-carousel-dots button.active { width: 16px; } }
 @media (prefers-reduced-motion: reduce) { .ec-home *, .ec-home *::before, .ec-home *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+@media (max-width: 900px) {
+  .navbar-brand { gap: 8px; }
+  .navbar-brand .logo { width: 42px; height: 42px; padding: 2px; flex: 0 0 42px; border: 1px solid #dce6d2; border-radius: 8px; background: #fff; object-fit: contain; }
+  .navbar-brand .brand-name { max-width: none; overflow: visible; white-space: normal; line-height: 1.05; }
+  .navbar-brand .brand-name span:first-child { font-size: 12px; letter-spacing: -.015em; white-space: normal; overflow: visible; text-overflow: clip; }
+  .navbar-brand .brand-name span:last-child { margin-top: 2px; font-size: 10px; letter-spacing: .015em; white-space: normal; }
+}
