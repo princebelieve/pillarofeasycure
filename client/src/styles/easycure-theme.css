@@ -281,6 +281,13 @@ body .contact-strip .contact-number:hover { text-decoration: underline; text-und
 @media (prefers-reduced-motion: reduce) { .ec-home *, .ec-home *::before, .ec-home *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 
 @media (max-width: 900px) {
+  body .navbar { background: linear-gradient(112deg, #102c21 0%, #1d4432 38%, #294d39 52%, #153827 100%); border-bottom: 1px solid #91ae71; box-shadow: 0 6px 22px #10281e30, inset 0 1px #ffffff14; }
+  body .navbar .brand-name span:first-child { color: #f4f3e8; }
+  body .navbar .brand-name span:last-child { color: #c7deb2; }
+  body .navbar .mobile-nav-actions :is(.products-nav-button, .cart-nav-button, .notification-bell) { color: #f4f3e8; }
+  body .navbar .mobile-nav-actions :is(.products-nav-button, .cart-nav-button) { border-color: #a9c38f; background: #ffffff0c; }
+  body .navbar .mobile-nav-actions :is(.products-nav-button, .cart-nav-button):hover { border-color: #d6e9b7; background: #ffffff1c; }
+  body .navbar .hamburger { border: 1px solid #d6e9b7; background: #e8f1db; color: #203b2b; }
   .navbar-brand { gap: 8px; }
   .navbar-brand .logo { width: 42px; height: 42px; padding: 2px; flex: 0 0 42px; border: 1px solid #dce6d2; border-radius: 8px; background: #fff; object-fit: contain; }
   .navbar-brand .brand-name { max-width: none; overflow: visible; white-space: normal; line-height: 1.05; }
