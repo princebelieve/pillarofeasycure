@@ -25,6 +25,7 @@ body .easy-btn-outline { background: #fff; color: #553578; border: 1px solid #55
 body :is(.easy-eyebrow, .eyebrow) { color: #5b3a7d; }
 body .easy-text-link { color: #4e3170; }
 .ec-home { background: #fafbf7; color: #263128; }
+.ec-brand-promise .muted { color: rgba(255, 255, 255, .94); }
 .ec-home h2 { color: #324827; font-size: clamp(1.8rem, 3vw, 2.7rem); letter-spacing: -.035em; line-height: 1.15; }
 .ec-hero { padding: 74px 0 68px; background: linear-gradient(115deg, #f3f8eb, #eff7fc 70%, #f7edf5); }
 .ec-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
