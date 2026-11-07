@@ -41,6 +41,17 @@ function prepareSourceProducts(sourceProducts, existingProducts) {
   return { products, fingerprint, duplicates };
 }
 
+function isR2SignatureError(error) {
+  const code = String(error?.Code || error?.code || error?.name || "");
+  return ["SignatureDoesNotMatch", "InvalidAccessKeyId", "AuthorizationHeaderMalformed"].includes(code);
+}
+
+function transferStageError(stage, message) {
+  const error = new Error(message);
+  error.transferStage = stage;
+  return error;
+}
+
 router.get("/easylife-products", async (req, res) => {
   let source;
   try {
@@ -91,8 +102,22 @@ router.post("/easylife-products/import", express.json({ limit: "1mb" }), async (
           if (!url) return url;
           if (imageCache.has(url)) return imageCache.get(url);
           const key = sourceObjectKey(url);
-          const { buffer, contentType } = await readSourceR2Object(sourceS3, key);
-          const copiedUrl = await uploadBufferToR2(buffer, { fileName: key.split("/").pop(), contentType, folder });
+          let object;
+          try { object = await readSourceR2Object(sourceS3, key); }
+          catch (error) {
+            const reason = isR2SignatureError(error)
+              ? "R2 rejected the source signature; verify the matching EasyLife S3 key pair and account endpoint."
+              : `R2 could not read a source image (${error.Code || error.code || error.name || "request error"}).`;
+            throw transferStageError("source-read", `EasyLife source image read failed. ${reason} Check EASYLIFE_SOURCE_R2_* settings.`);
+          }
+          let copiedUrl;
+          try { copiedUrl = await uploadBufferToR2(object.buffer, { fileName: key.split("/").pop(), contentType: object.contentType, folder }); }
+          catch (error) {
+            const reason = isR2SignatureError(error)
+              ? "R2 rejected the destination signature; verify the matching EasyCure S3 key pair and account endpoint."
+              : `R2 could not save a destination image (${error.Code || error.code || error.name || "request error"}).`;
+            throw transferStageError("destination-write", `EasyCure destination image upload failed. ${reason} Check the unprefixed R2_* settings.`);
+          }
           imageCache.set(url, copiedUrl);
           return copiedUrl;
         };
@@ -102,6 +127,7 @@ router.post("/easylife-products/import", express.json({ limit: "1mb" }), async (
         existingSkus.add(String(product.sku).trim().toLowerCase());
         imported++;
       } catch (error) {
+        if (error.transferStage) throw error;
         failures.push({ product: sourceProduct.name || sourceId, message: error.message });
       }
     }
