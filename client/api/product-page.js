@@ -1,4 +1,5 @@
-import { getServerApiBase, getServerOrigin } from "./_apiBase.js";
+import { getServerApiBase } from "./_apiBase.js";
+import { PUBLIC_SITE_URL } from "../src/config/site.js";
 
 function escapeHtml(value = "") {
   return String(value)
@@ -91,8 +92,7 @@ function injectProductMarkup(shell, head, body) {
 
 export default async function handler(req, res) {
   const id = req.query?.id;
-  const origin = getServerOrigin(req);
-  const productUrl = `${origin}/product/${encodeURIComponent(id || "")}`;
+  const productUrl = `${PUBLIC_SITE_URL}/product/${encodeURIComponent(id || "")}`;
 
   if (!id) {
     res.writeHead(302, { Location: "/collection" });

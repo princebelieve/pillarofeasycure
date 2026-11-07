@@ -1,4 +1,5 @@
 import { getServerApiBase } from "./_apiBase.js";
+import { PUBLIC_SITE_URL } from "../src/config/site.js";
 
 function escapeHtml(value = "") {
   return String(value)
@@ -26,8 +27,8 @@ function youtubeThumbnail(url = "") {
 export default async function handler(req, res) {
   const id = req.query?.id;
   const apiBase = getServerApiBase(req);
-  const fallbackImage = "https://pillarofeasycure.com/logo.png";
-  const pageUrl = `https://pillarofeasycure.com/testimonials${id ? `?post=${encodeURIComponent(id)}` : ""}`;
+  const fallbackImage = `${PUBLIC_SITE_URL}/logo.png`;
+  const pageUrl = `${PUBLIC_SITE_URL}/testimonials${id ? `?post=${encodeURIComponent(id)}` : ""}`;
 
   if (!id) {
     res.writeHead(302, { Location: pageUrl });

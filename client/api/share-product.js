@@ -1,4 +1,5 @@
 import { getServerApiBase } from "./_apiBase.js";
+import { PUBLIC_SITE_URL } from "../src/config/site.js";
 
 function escapeHtml(value = "") {
   return String(value)
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
   // This is only used by Vercel to fetch product metadata for a social-card
   // preview. The link visitors receive below always stays on the public site.
   const apiBase = getServerApiBase(req);
-  const publicUrl = "https://pillarofeasycure.com";
+  const publicUrl = PUBLIC_SITE_URL;
   const productUrl = `${publicUrl}/product/${encodeURIComponent(id || "")}`;
 
   if (!id) {

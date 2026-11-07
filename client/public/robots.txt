@@ -4,4 +4,14 @@ Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /profile/
 Disallow: /notifications/
-Sitemap: https://pillarofeasycure.com/sitemap.xml
+Disallow: /cart
+Disallow: /checkout
+Disallow: /success
+Disallow: /cancel
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /verify-email
+Disallow: /distributor
+Sitemap: https://pillarofeasycure.vercel.app/sitemap.xml

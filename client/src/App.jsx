@@ -4,6 +4,7 @@ import { Suspense, lazy, useEffect, useLayoutEffect } from "react";
 
 import { CartProvider } from "./context/CartContext";
 import { NotificationProvider } from "./context/NotificationContext";
+import { PUBLIC_SITE_URL } from "./config/site";
 
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
@@ -75,7 +76,7 @@ function CanonicalUpdater() {
   const location = useLocation();
 
   useEffect(() => {
-    const canonicalUrl = `https://pillarofeasycure.com${location.pathname}${location.search}`;
+    const canonicalUrl = `${PUBLIC_SITE_URL}${location.pathname}${location.search}`;
     let canonical = document.querySelector('link[rel="canonical"]');
 
     if (!canonical) {

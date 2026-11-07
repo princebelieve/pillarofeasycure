@@ -1,13 +1,9 @@
 import { getServerApiBase } from "./_apiBase.js";
+import { PUBLIC_SITE_URL } from "../src/config/site.js";
 
 export default async function handler(req, res) {
   const apiBase = getServerApiBase(req);
-  const host = req.headers.host;
-  const protocol = req.headers["x-forwarded-proto"] || "https";
-  const clientUrl =
-    process.env.CLIENT_URL ||
-    (host ? `${protocol}://${host}` : "http://localhost:5173");
-  const publicClientUrl = clientUrl.split(",")[0].trim().replace(/\/$/, "");
+  const publicClientUrl = PUBLIC_SITE_URL;
     const apiUrl = `${apiBase}/products`;
     const shippingUrl = `${apiBase}/shipping/merchant-rates`;
 

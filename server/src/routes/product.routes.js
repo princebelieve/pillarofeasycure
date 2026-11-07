@@ -39,8 +39,14 @@ router.get("/sitemap/xml", async (req, res) => {
     const staticPages = [
       { loc: baseUrl, priority: "1.00" },
       { loc: `${baseUrl}/collection`, priority: "0.90" },
+      { loc: `${baseUrl}/support`, priority: "0.80" },
+      { loc: `${baseUrl}/testimonials`, priority: "0.80" },
+      { loc: `${baseUrl}/outreach`, priority: "0.80" },
+      { loc: `${baseUrl}/journey`, priority: "0.80" },
+      { loc: `${baseUrl}/our-director`, priority: "0.80" },
+      { loc: `${baseUrl}/how-to-use`, priority: "0.75" },
       { loc: `${baseUrl}/contact`, priority: "0.80" },
-      { loc: `${baseUrl}/about`, priority: "0.70" },
+      { loc: `${baseUrl}/about`, priority: "0.75" },
     ];
 
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';

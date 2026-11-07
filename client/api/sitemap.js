@@ -1,4 +1,5 @@
 import { getServerApiBase } from "./_apiBase.js";
+import { PUBLIC_SITE_URL } from "../src/config/site.js";
 
 export default async function handler(req, res) {
   const apiUrl = `${getServerApiBase(req)}/products`;
@@ -8,7 +9,7 @@ export default async function handler(req, res) {
     const response = await fetch(apiUrl);
     if (response.ok) products = await response.json();
 
-    const baseUrl = "https://pillarofeasycure.com";
+    const baseUrl = PUBLIC_SITE_URL;
     const staticPages = [
       { loc: baseUrl, priority: "1.00" },
       { loc: `${baseUrl}/collection`, priority: "0.95" },
@@ -16,6 +17,8 @@ export default async function handler(req, res) {
       { loc: `${baseUrl}/testimonials`, priority: "0.85" },
       { loc: `${baseUrl}/outreach`, priority: "0.80" },
       { loc: `${baseUrl}/journey`, priority: "0.80" },
+      { loc: `${baseUrl}/our-director`, priority: "0.80" },
+      { loc: `${baseUrl}/how-to-use`, priority: "0.75" },
       { loc: `${baseUrl}/contact`, priority: "0.85" },
       { loc: `${baseUrl}/about`, priority: "0.75" },
       { loc: `${baseUrl}/privacy-policy`, priority: "0.70" },

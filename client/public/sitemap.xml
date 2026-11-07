@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pillarofeasycure.com/</loc>
+    <loc>https://pillarofeasycure.vercel.app/</loc>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/collection</loc>
+    <loc>https://pillarofeasycure.vercel.app/collection</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/support</loc>
+    <loc>https://pillarofeasycure.vercel.app/support</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/testimonials</loc>
+    <loc>https://pillarofeasycure.vercel.app/testimonials</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/outreach</loc>
+    <loc>https://pillarofeasycure.vercel.app/outreach</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/journey</loc>
+    <loc>https://pillarofeasycure.vercel.app/journey</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/contact</loc>
+    <loc>https://pillarofeasycure.vercel.app/our-director</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/about</loc>
+    <loc>https://pillarofeasycure.vercel.app/how-to-use</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://pillarofeasycure.vercel.app/contact</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pillarofeasycure.vercel.app/about</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/login</loc>
-    <priority>0.40</priority>
-  </url>
-  <url>
-    <loc>https://pillarofeasycure.com/register</loc>
-    <priority>0.40</priority>
-  </url>
-  <url>
-    <loc>https://pillarofeasycure.com/privacy-policy</loc>
+    <loc>https://pillarofeasycure.vercel.app/privacy-policy</loc>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/refund-policy</loc>
+    <loc>https://pillarofeasycure.vercel.app/refund-policy</loc>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://pillarofeasycure.com/terms-conditions</loc>
+    <loc>https://pillarofeasycure.vercel.app/terms-conditions</loc>
     <priority>0.50</priority>
   </url>
 </urlset>
