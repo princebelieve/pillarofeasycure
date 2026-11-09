@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import useAuth from "../context/AuthContext";
 
 export default function Footer() {
@@ -45,7 +45,14 @@ export default function Footer() {
           <a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer">WhatsApp: +2348029778813</a>
           <a href="https://resyinpublications.com/" target="_blank" rel="noopener noreferrer">RESYIN for Readers</a>
           <a href="https://resyinpublications.com/" target="_blank" rel="noopener noreferrer">RESYIN for Writers</a>
-          <div className="footer-social"><a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp size={24} /></a></div>
+          <nav className="footer-social" aria-label="Follow EASYCURE on social media">
+            <a href="https://www.tiktok.com/@dr.easycure" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok size={22} /></a>
+            <a href="https://www.facebook.com/share/1MeS6kTboc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF size={22} /></a>
+            <a href="https://www.instagram.com/dr.easycure?utm_source=qr&vrfl=NWM2cnF6N2JteG54" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram size={22} /></a>
+            <a href="https://www.youtube.com/@YourHealthMyPrincipalPriority" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube size={24} /></a>
+            <a href="https://x.com/DrEasycure" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter size={20} /></a>
+            <a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp size={24} /></a>
+          </nav>
         </div>
       </div>
 
