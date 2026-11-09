@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaPinterestP, FaTiktok, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import useAuth from "../context/AuthContext";
 
 export default function Footer() {
@@ -51,6 +51,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/dr.easycure?utm_source=qr&vrfl=NWM2cnF6N2JteG54" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram size={22} /></a>
             <a href="https://www.youtube.com/@YourHealthMyPrincipalPriority" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube size={24} /></a>
             <a href="https://x.com/DrEasycure" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter size={20} /></a>
+            <a href="https://www.pinterest.com/profclarae/?invite_code=e2c20c89dae04a88ad47f6324daf5f7d&sender=1014436022223794760" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><FaPinterestP size={22} /></a>
             <a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp size={24} /></a>
           </nav>
         </div>
