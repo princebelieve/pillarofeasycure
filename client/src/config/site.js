@@ -1,1 +1,1 @@
-export const PUBLIC_SITE_URL = "https://pillarofeasycure.vercel.app";
+export const PUBLIC_SITE_URL = "https://pillarofeasycure.com";

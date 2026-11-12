@@ -50,7 +50,7 @@ async function uploadBufferToR2(buffer, { fileName = "upload", contentType = "ap
 function createSourceR2Client() {
   const { EASYLIFE_SOURCE_R2_ENDPOINT, EASYLIFE_SOURCE_R2_ACCESS_KEY, EASYLIFE_SOURCE_R2_SECRET_KEY } = process.env;
   if (!EASYLIFE_SOURCE_R2_ENDPOINT || !EASYLIFE_SOURCE_R2_ACCESS_KEY || !EASYLIFE_SOURCE_R2_SECRET_KEY || !process.env.EASYLIFE_SOURCE_R2_BUCKET) {
-    throw new Error("Configure the EasyLife source R2 endpoint, access key, secret key, and bucket on the server.");
+    throw new Error("Configure the source R2 endpoint, access key, secret key, and bucket on the server.");
   }
   return new S3Client({
     region: "auto",

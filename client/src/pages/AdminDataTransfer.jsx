@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { exportAdminData, getImportTemplate, importAdminData, importEasyLifeProducts, previewEasyLifeProductTransfer } from "../services/api";
+import { exportAdminData, getImportTemplate, importAdminData, importSourceProducts, previewSourceProductTransfer } from "../services/api";
 
 const categories = [
   ["products", "Products"], ["content", "Content, stories & testimonials"],
@@ -46,13 +46,13 @@ export default function AdminDataTransfer() {
       if (action === "template") downloadJson(await getImportTemplate(dataset), `easycure-${dataset}-template.json`);
       if (action === "export") downloadJson(await exportAdminData(dataset), `easycure-${dataset}-export.json`);
       if (action === "source-preview") {
-        const result = await previewEasyLifeProductTransfer();
+        const result = await previewSourceProductTransfer();
         setSourcePreview(result);
         setReport(null);
-        setMessage("EasyLife's MongoDB catalogue is ready for review. Product images will be copied from its R2 bucket during transfer.");
+        setMessage("The source MongoDB catalogue is ready for review. Product images will be copied from its R2 bucket during transfer.");
       }
       if (action === "source-import") {
-        const result = await importEasyLifeProducts({ fingerprint: sourcePreview.fingerprint });
+        const result = await importSourceProducts({ fingerprint: sourcePreview.fingerprint });
         setSourcePreview(null);
         setMessage(result.message);
         if (result.failures?.length) setMessage(`${result.message} ${result.failures.map((failure) => `${failure.product}: ${failure.message}`).join("; ")}`);
@@ -68,10 +68,10 @@ export default function AdminDataTransfer() {
     finally { setBusy(false); }
   }
 
-  return <div className="page"><h1>Catalogue transfer</h1><p>Transfer the EasyLife product catalogue from MongoDB, including product images copied from its Cloudflare R2 bucket.</p>
+  return <div className="page"><h1>Catalogue transfer</h1><p>Transfer the source product catalogue from MongoDB, including product images copied from its Cloudflare R2 bucket.</p>
     <section className="data-transfer-card"><label htmlFor="data-category">Choose data to transfer</label><select id="data-category" value={dataset} disabled={busy} onChange={(event) => { reset(); setDataset(event.target.value); }}>{categories.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select>
-      <div className="data-transfer-actions">{dataset === "products" && <><button disabled={busy} onClick={() => run("source-preview")}>Preview EasyLife products</button><button disabled={busy} onClick={() => run("export")}>Export EasyCure data</button></>}<button disabled={busy} onClick={() => run("template")}>Download JSON template</button></div>
-      {dataset === "products" && <><p>Configure the EasyLife source MongoDB connection and R2 read credentials in the server environment. The source database is read only. Review the count before confirming; each product’s cover and gallery images are copied into this project’s R2 bucket and the new image URLs are saved with the product.</p>{sourcePreview && <div className="data-transfer-report" role="status"><p>Ready to transfer {sourcePreview.total} products and {sourcePreview.imageCount} images. {sourcePreview.duplicates} products already exist in EasyCure and will be skipped.</p><button className="primary" disabled={busy || !sourcePreview.total} onClick={() => run("source-import")}>{busy ? "Transferring…" : `Transfer ${sourcePreview.total - sourcePreview.duplicates} products with images`}</button></div>}</>}
+      <div className="data-transfer-actions">{dataset === "products" && <><button disabled={busy} onClick={() => run("source-preview")}>Preview source products</button><button disabled={busy} onClick={() => run("export")}>Export EasyCure data</button></>}<button disabled={busy} onClick={() => run("template")}>Download JSON template</button></div>
+      {dataset === "products" && <><p>Configure the source MongoDB connection and R2 read credentials in the server environment. The source database is read only. Review the count before confirming; each product’s cover and gallery images are copied into this project’s R2 bucket and the new image URLs are saved with the product.</p>{sourcePreview && <div className="data-transfer-report" role="status"><p>Ready to transfer {sourcePreview.total} products and {sourcePreview.imageCount} images. {sourcePreview.duplicates} products already exist in EasyCure and will be skipped.</p><button className="primary" disabled={busy || !sourcePreview.total} onClick={() => run("source-import")}>{busy ? "Transferring…" : `Transfer ${sourcePreview.total - sourcePreview.duplicates} products with images`}</button></div>}</>}
       {dataset !== "products" && <p>Upload a JSON export or fill in the template. Use public image, audio, and video URLs; media files are not copied. Each import accepts up to 500 records and 5 MB.</p>}
       <p>Existing records are kept. Products match by SKU, shipping rates by state, transport companies by name, and content by type, title, name, and text. Duplicate records are skipped.</p>
       <label htmlFor="data-file">Choose JSON file</label><input ref={input} id="data-file" type="file" accept=".json,application/json" disabled={busy} onChange={readFile} />

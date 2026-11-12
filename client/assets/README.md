@@ -19,4 +19,4 @@ Generation prompt: Regenerate the supplied logo faithfully, preserving the dark 
 | favicon-32.ico | 32 × 32 | Leaf and hands |
 | favicon.ico | 16, 32, 48 entries | Leaf and hands |
 
-Navbar, footer, admin navigation, sharing previews, and notification fallbacks continue using the established public asset paths. The original EASYLIFE logo and icons at those paths have been replaced.
+Navbar, footer, admin navigation, sharing previews, and notification fallbacks continue using the established public asset paths. The logo and icons at those paths use the EasyCure branding.

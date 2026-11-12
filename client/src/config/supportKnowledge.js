@@ -130,7 +130,7 @@ const supportKnowledge = [
     keywords: ["contact", "support", "help", "whatsapp", "phone", "email", "call", "enquiry"],
     details: [
       "Call EASYCURE at +2348117240100. WhatsApp support: +2348029778813.",
-      "Email support: pillarofeasycure@gmail.com.",
+      "Email support: contact@pillarofeasycure.com.",
       "Use the Contact page to submit your name, email, phone number, area of interest, and message.",
     ],
   },

@@ -21,7 +21,7 @@ function sourceObjectKey(imageUrl) {
   const image = new URL(imageUrl);
   const basePath = base.pathname.replace(/\/$/, "");
   if (image.origin !== base.origin || !image.pathname.startsWith(`${basePath}/`)) {
-    throw new Error(`Product image is not under the configured EasyLife R2 public URL: ${imageUrl}`);
+    throw new Error(`Product image is not under the configured source R2 public URL: ${imageUrl}`);
   }
   return decodeURIComponent(image.pathname.slice(basePath.length + 1));
 }
@@ -65,8 +65,8 @@ router.get("/easylife-products", async (req, res) => {
     const imageCount = prepared.products.reduce((count, { product }) => count + Boolean(product.coverImage) + (product.gallery || []).length, 0);
     return res.json({ total: prepared.products.length, imageCount, duplicates: prepared.duplicates, fingerprint: prepared.fingerprint });
   } catch (error) {
-    console.error("EasyLife MongoDB product preview failed:", error.message);
-    return res.status(502).json({ message: error.message || "Could not read products from the EasyLife source database." });
+    console.error("Source MongoDB product preview failed:", error.message);
+    return res.status(502).json({ message: error.message || "Could not read products from the source database." });
   } finally {
     if (source) await source.close().catch(() => {});
   }
@@ -106,9 +106,9 @@ router.post("/easylife-products/import", express.json({ limit: "1mb" }), async (
           try { object = await readSourceR2Object(sourceS3, key); }
           catch (error) {
             const reason = isR2SignatureError(error)
-              ? "R2 rejected the source signature; verify the matching EasyLife S3 key pair and account endpoint."
+              ? "R2 rejected the source signature; verify the matching source S3 key pair and account endpoint."
               : `R2 could not read a source image (${error.Code || error.code || error.name || "request error"}).`;
-            throw transferStageError("source-read", `EasyLife source image read failed. ${reason} Check EASYLIFE_SOURCE_R2_* settings.`);
+            throw transferStageError("source-read", `Source image read failed. ${reason} Check EASYLIFE_SOURCE_R2_* settings.`);
           }
           let copiedUrl;
           try { copiedUrl = await uploadBufferToR2(object.buffer, { fileName: key.split("/").pop(), contentType: object.contentType, folder }); }
@@ -131,10 +131,10 @@ router.post("/easylife-products/import", express.json({ limit: "1mb" }), async (
         failures.push({ product: sourceProduct.name || sourceId, message: error.message });
       }
     }
-    return res.json({ imported, skipped, failures, message: `${imported} products copied from EasyLife with their R2 images. ${skipped} duplicate products skipped.${failures.length ? ` ${failures.length} products failed; review the listed errors and retry after correcting the source or configuration.` : ""}` });
+    return res.json({ imported, skipped, failures, message: `${imported} products copied from the source catalogue with their R2 images. ${skipped} duplicate products skipped.${failures.length ? ` ${failures.length} products failed; review the listed errors and retry after correcting the source or configuration.` : ""}` });
   } catch (error) {
-    console.error("EasyLife MongoDB/R2 product transfer failed:", error.message);
-    return res.status(502).json({ message: error.message || "The EasyLife MongoDB and R2 transfer could not be completed." });
+    console.error("Source MongoDB/R2 product transfer failed:", error.message);
+    return res.status(502).json({ message: error.message || "The Source MongoDB and R2 transfer could not be completed." });
   } finally {
     if (sourceS3) sourceS3.destroy();
     if (source) await source.close().catch(() => {});

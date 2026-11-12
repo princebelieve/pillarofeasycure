@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className="footer-contact">
           <h4>Contact & Follow</h4>
-          <a href="mailto:pillarofeasycure@gmail.com">pillarofeasycure@gmail.com</a>
+          <a href="mailto:contact@pillarofeasycure.com">contact@pillarofeasycure.com</a>
           <a href="tel:+2348117240100">+2348117240100</a>
           <a href="https://wa.me/2348029778813" target="_blank" rel="noopener noreferrer">WhatsApp: +2348029778813</a>
           <a href="https://resyinpublications.com/" target="_blank" rel="noopener noreferrer">RESYIN for Readers</a>

@@ -14,4 +14,4 @@ Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /verify-email
 Disallow: /distributor
-Sitemap: https://pillarofeasycure.vercel.app/sitemap.xml
+Sitemap: https://pillarofeasycure.com/sitemap.xml

@@ -12,11 +12,11 @@ export function getImportTemplate(dataset) {
   return apiRequest(`/api/admin/data/${dataset}/template`);
 }
 
-export function previewEasyLifeProductTransfer() {
+export function previewSourceProductTransfer() {
   return apiRequest("/api/admin/data/easylife-products");
 }
 
-export function importEasyLifeProducts(payload) {
+export function importSourceProducts(payload) {
   return apiRequest("/api/admin/data/easylife-products/import", { method: "POST", body: JSON.stringify(payload) });
 }
 

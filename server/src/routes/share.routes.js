@@ -14,9 +14,9 @@ function clientBaseUrl() {
     const parsed = new URL(configured);
     // A Render health-check URL is an API endpoint, never a customer-facing
     // destination for a shared post. Fall back to the public web app instead.
-    if (/^\/health\/?$/i.test(parsed.pathname)) return "https://pillarofeasycure.vercel.app";
+    if (/^\/health\/?$/i.test(parsed.pathname)) return "https://pillarofeasycure.com";
   } catch {
-    return "https://pillarofeasycure.vercel.app";
+    return "https://pillarofeasycure.com";
   }
   return configured;
 }

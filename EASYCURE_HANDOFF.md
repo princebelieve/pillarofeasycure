@@ -1,6 +1,6 @@
 # EasyCure adaptation
 
-This checkout adapts the existing EASYLIFE application for **PILLAR OF EASYCURE AND WELLNESS HAVEN**. Existing shopping, distributor, payment, and administration workflows are retained.
+This checkout contains the application for **PILLAR OF EASYCURE AND WELLNESS HAVEN**. Existing shopping, distributor, payment, and administration workflows are retained.
 
 ## Brand information
 
@@ -9,7 +9,9 @@ This checkout adapts the existing EASYLIFE application for **PILLAR OF EASYCURE 
 - CAC business name: PILLAR OF EASYCURE AND WELLNESS HAVEN
 - BN number: 9930313
 - Registered business address: 13, Uwumarongie Street, GRA, Benin City, Edo State, Nigeria
-- Public business email: pillarofeasycure@gmail.com
+- Public customer care email: contact@pillarofeasycure.com
+- Internal business email (not displayed to customers): info@pillarofeasycure.com
+- Admin email: pillarofeasycure@gmail.com
 - Public business phone/WhatsApp: +2348029778813
 - Palette: fresh leaf green (#b5d68c), purple (#553578), sky blue (#e4f2fc), and soft pink (#f8e6ef). The final visual layer is `client/src/styles/easycure-theme.css`.
 - Partner adverts: RESYIN Publications, https://resyinpublications.com/ (reader and writer slides)
@@ -22,7 +24,7 @@ The supplied logo has been regenerated with the corrected EASYCURE spelling and 
 
 Inherited training sections, programme promises, mentorship references, and training enquiries have been removed from the homepage, other pages, support assistant, backend support answers, and policy copy. The former membership promotion now explains actual account features such as orders, receipts, profile management, and distributor applications. Database-managed stories and media have not been edited.
 
-No EASYLIFE clinic/supermarket affiliation, social account, optometrist credential, or fixed meeting schedule is carried into EasyCure's text.
+Only the supplied EasyCure business affiliations, contact details, and credentials are used in site copy.
 
 ## Bulk data
 
