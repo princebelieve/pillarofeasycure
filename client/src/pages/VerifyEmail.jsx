@@ -1,3 +1,4 @@
+import ResendVerification from "../components/ResendVerification";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -44,6 +45,8 @@ export default function VerifyEmail() {
             ? "Checking your verification link..."
             : status.message}
         </p>
+
+        <ResendVerification />
 
         {!status.loading ? (
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>

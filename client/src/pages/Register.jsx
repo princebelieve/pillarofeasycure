@@ -1,3 +1,4 @@
+import ResendVerification from "../components/ResendVerification";
 //client/src/pages/Register.jsx
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
@@ -57,8 +58,8 @@ export default function Register() {
   const handleResendVerification = async () => {
     try {
       setSubmitting(true);
-      await resendVerificationEmail(registeredEmail);
-      setRegistrationMessage("A new verification email has been requested. Check your inbox and spam folder.");
+      const result = await resendVerificationEmail(registeredEmail);
+      setRegistrationMessage(result.message || "Verification requested. Check your inbox and spam folder.");
     } catch (err) {
       setRegistrationMessage(err?.message || "Unable to resend the verification email.");
     } finally {
@@ -102,7 +103,7 @@ export default function Register() {
 
   return (
     <>
-      <Navbar /> {/* ✅ THIS WAS WHAT YOU WERE MISSING */}
+      <Navbar /> {/* âœ… THIS WAS WHAT YOU WERE MISSING */}
       <div className="form auth-form register-auth-form" style={{ marginTop: 50 }}>
         <h1>Create Account</h1>
         <p className="muted" style={{ marginBottom: 20 }}>
@@ -247,6 +248,8 @@ export default function Register() {
             </p>
           </div>
         </form>
+
+        <ResendVerification />
 
         <p style={{ marginTop: 16, fontSize: 14 }}>
           Already have an account?{" "}

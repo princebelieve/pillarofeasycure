@@ -46,7 +46,7 @@ const sendVerificationLink = async ({ email, token }) => {
   }
 };
 
-// 🟢 REGISTER
+// ðŸŸ¢ REGISTER
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -107,7 +107,7 @@ const registerUser = async (req, res) => {
   }
 };
 
-// 🔵 LOGIN
+// ðŸ”µ LOGIN
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -403,7 +403,7 @@ const verifyEmail = async (req, res) => {
 const resendVerificationEmail = async (req, res) => {
   try {
     const { email } = req.body;
-    const normalizedEmail = String(email || "").toLowerCase();
+    const normalizedEmail = String(email || "").trim().toLowerCase();
 
     const user = await User.findOne({ email: normalizedEmail });
 
@@ -431,10 +431,13 @@ const resendVerificationEmail = async (req, res) => {
 
     if (token) {
       await user.save();
-      await sendVerificationLink({
+      const sent = await sendVerificationLink({
         email: verificationEmail,
         token,
       });
+      if (!sent) {
+        return res.status(503).json({ message: "Verification email could not be sent. Please try again later or contact contact@pillarofeasycure.com." });
+      }
     }
 
     return res.json({
@@ -509,7 +512,7 @@ const refreshToken = async (req, res) => {
   }
 };
 
-// 🟢 CHANGE PASSWORD (authenticated users)
+// ðŸŸ¢ CHANGE PASSWORD (authenticated users)
 const changePassword = async (req, res) => {
   try {
     const { currentPassword, newPassword } = req.body;

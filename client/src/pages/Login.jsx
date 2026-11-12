@@ -1,3 +1,4 @@
+import ResendVerification from "../components/ResendVerification";
 //client/src/pages/Login.jsx
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -164,6 +165,8 @@ export default function Login() {
             />
           </div>
         </form>
+
+        <ResendVerification />
 
         <p style={{ marginTop: 16, fontSize: 14 }}>
           Don't have an account?{" "}

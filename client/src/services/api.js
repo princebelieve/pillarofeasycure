@@ -224,7 +224,9 @@ export async function resendVerificationEmail(email) {
     body: JSON.stringify({ email }),
   });
 
-  return res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || "Unable to resend verification email.");
+  return data;
 }
 
 export async function changePassword(currentPassword, newPassword) {
