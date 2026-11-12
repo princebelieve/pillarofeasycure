@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { resendVerificationEmail } from "../services/api";
 
-export default function ResendVerification() {
-  const [email, setEmail] = useState("");
+export default function ResendVerification({ initialEmail = "", initiallyOpen = false }) {
+  const [email, setEmail] = useState(initialEmail);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -21,12 +21,12 @@ export default function ResendVerification() {
   }
 
   return (
-    <details style={{ marginTop: 20 }}>
+    <details open={initiallyOpen || undefined} style={{ marginTop: 20 }}>
       <summary>Didn't receive your verification email?</summary>
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12, marginTop: 12 }}>
         <label>
           Account email
-          <input type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+          <input type="email" autoComplete="email" autoFocus={initiallyOpen} value={email} onChange={(event) => setEmail(event.target.value)} required />
         </label>
         <button type="submit" className="btn-primary" disabled={busy}>
           {busy ? "Sending..." : "Resend verification email"}

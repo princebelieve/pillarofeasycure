@@ -14,6 +14,7 @@ export default function Login() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [verificationRequest, setVerificationRequest] = useState({ attempt: 0, email: "" });
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -62,7 +63,12 @@ export default function Login() {
       }
     } catch (error) {
       console.error(error);
-
+      if (/please verify your email/i.test(error?.message || "")) {
+        setVerificationRequest((previous) => ({
+          attempt: previous.attempt + 1,
+          email: form.email.trim(),
+        }));
+      }
       alert(error?.message || "Unable to login. Please try again.");
     } finally {
       setSubmitting(false);
@@ -166,7 +172,11 @@ export default function Login() {
           </div>
         </form>
 
-        <ResendVerification />
+        <ResendVerification
+          key={verificationRequest.attempt}
+          initialEmail={verificationRequest.email}
+          initiallyOpen={verificationRequest.attempt > 0}
+        />
 
         <p style={{ marginTop: 16, fontSize: 14 }}>
           Don't have an account?{" "}
