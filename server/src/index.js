@@ -68,7 +68,6 @@ app.use(
   }),
 );
 
-app.use("/api/admin/data", require("./routes/admin.data.routes"));
 app.use(express.json());
 
 app.use("/api/testimonials", testimonialRoutes);

@@ -8,25 +8,6 @@ import {
 } from "../utils/auth";
 const BASE_URL = import.meta.env.VITE_API_URL || "";
 
-export function getImportTemplate(dataset) {
-  return apiRequest(`/api/admin/data/${dataset}/template`);
-}
-
-export function previewSourceProductTransfer() {
-  return apiRequest("/api/admin/data/easylife-products");
-}
-
-export function importSourceProducts(payload) {
-  return apiRequest("/api/admin/data/easylife-products/import", { method: "POST", body: JSON.stringify(payload) });
-}
-
-export function exportAdminData(dataset) {
-  return apiRequest(`/api/admin/data/${dataset}/export`);
-}
-
-export function importAdminData(dataset, payload) {
-  return apiRequest(`/api/admin/data/${dataset}/import`, { method: "POST", body: JSON.stringify(payload) });
-}
 let refreshInFlight = null;
 
 async function readApiResponse(response) {

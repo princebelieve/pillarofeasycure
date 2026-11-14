@@ -26,18 +26,12 @@ Inherited training sections, programme promises, mentorship references, and trai
 
 Only the supplied EasyCure business affiliations, contact details, and credentials are used in site copy.
 
-## Bulk data
+## Catalogue data
 
-Admins can open **Import & Export** in the sidebar (`/admin/data`), or use the buttons on Products and Content Studio.
-
-Supported JSON datasets: products, content/testimonials, state shipping rates, shipping zones, and transport companies. Download a template, populate it or use an exported JSON array, select the category, choose the file, preview, correct any errors, then import. Limits: 500 records per batch, 5 MB per request. Split larger exports into batches.
-
-Imports only add new records. Existing SKUs, states, company names, and matching content are skipped. IDs, ownership references, timestamps, and deletion/approval request metadata are removed. Media links are retained; files are not downloaded or copied into another storage bucket. Image/video/audio URLs must remain publicly available or be replaced before import. Imports do not send announcement notifications.
-
-Exports exclude accounts, orders, payment credentials, customer records, distributor stock, and other private operational data. Configure payment settings directly for the new business. To export the original site's data through these tools, the same admin transfer routes/UI would need to be installed on its checkout; this task only changes this copy. JSON exports from another source can also be used if they match the downloaded templates.
+Imported products remain in EasyCure's own product collection and continue to use the standard product, stock, and checkout workflows. The source catalogue connection and bulk import/export tools have been removed. Removing those tools does not delete or modify existing products.
 
 ## Deployment later
 
-No deployment, DNS, Cloudflare connection, external data write, or actual `.env` edit is performed by this adaptation. `client/vercel.json` points its future API proxy at `api.pillarofeasycure.com`; provision that API hostname or replace the target with the eventual backend URL before deployment. Configure the new site's actual database, payment keys, email OAuth, Google sign-in, push keys, storage, and client/API environment variables when ready. Existing `.env` files remain as supplied in the copy.
+No deployment, DNS, Cloudflare connection, or external data write is performed by this adaptation. EasyLife source connection variables have been removed from the local server `.env`; remove the same source credentials from the Render environment and redeploy the server for the disconnection to take effect there. `client/vercel.json` points its future API proxy at `api.pillarofeasycure.com`; provision that API hostname or replace the target with the eventual backend URL before deployment. Configure the new site's actual database, payment keys, email OAuth, Google sign-in, push keys, storage, and client/API environment variables when ready.
 
-Local checks: `npm.cmd run build` in client; `node --test src/services/dataTransfer.test.js` in server. These do not connect to a database or send payments/emails.
+Local check: `npm.cmd run build` in client. It does not connect to a database or send payments/emails.
